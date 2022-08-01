@@ -6,6 +6,7 @@ import Hands from "./components/Layout/Hands/Hands";
 import Who from "./components/Layout/Who/Who";
 import Price from "./components/Layout/Price/Price";
 import Contact from "./components/Layout/Contact/Contact";
+import Footer from "./components/Layout/Footer";
 import "./styles/styles.sass";
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
                 <Who />
                 <Price />
                 <Contact />
+                <Footer />
             </main>
         </Fragment>
     );
