@@ -15,12 +15,10 @@ const Contact = () => {
                             <li className="list-contact-item">Kafkova 35</li>
                             <li className="list-contact-item">Praha 6</li>
                             <li className="list-contact-item">
-                                Tel.:
-                                <a href="tel:+420773242200">+420 773 242 200</a>
+                                Tel.: <a href="tel:+420773242200">+420 773 242 200</a>
                             </li>
                             <li className="list-contact-item">
-                                E-mail:
-                                <a href="mailto:roman.arpas1@gmail.com">Roman Arpáš</a>
+                                E-mail: <a href="mailto:roman.arpas1@gmail.com">Roman Arpáš</a>
                             </li>
                             <li className="list-contact-item">
                                 Skype: <a href="skype:Roman Arpáš">Roman Arpáš</a>

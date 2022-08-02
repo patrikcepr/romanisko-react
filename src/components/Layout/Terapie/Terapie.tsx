@@ -15,18 +15,18 @@ const Terapie = () => {
                         <h2>Proč mě vyhledat?</h2>
                         <ul className="list-services">
                             <li className="list-services-item">
-                                - Duševní problémy jako deprese, úzkost, myšlenky na sebevraždu a sebevražedné chování.
+                                - značný stres, problémy ve vztazích, v práci nebo jiných oblastech života
                             </li>
                             <li className="list-services-item">
-                                - Značný stres nebo problémy ve vztazích, práci nebo dalších oblastech života.
+                                - duševní problémy jako deprese, úzkost, pocity méněcennosti a viny
                             </li>
                             <li className="list-services-item">
-                                - Ztráta vzpomínek (paměti) na určité časové období, události, lidi a osobní informace.
+                                - ztráta vzpomínek na určité časové období, události, lidi či osobní informace
                             </li>
-                            <li className="list-services-item">- Vnímání okolních lidí a věcí jakoby zkresleně nebo nereálně.</li>
-                            <li className="list-services-item">- Pocit odpoutání od sebe sama a svých emocí.</li>
-                            <li className="list-services-item">- Nejasný pocit vlastní identity.</li>
-                            <li className="list-services-item">- Neschopnost dobře zvládat emoční nebo profesní stres.</li>
+                            <li className="list-services-item">- nejasný pocit vlastní identity</li>
+                            <li className="list-services-item">- myšlenky na sebevraždu, sebevražedné chování</li>
+                            <li className="list-services-item">- objevování a využítí vlastního potenciálu</li>
+                            <li className="list-services-item">- nalézání smyslu bytí, moudrosti, nadhledu i humoru</li>
                         </ul>
                     </div>
                 </div>

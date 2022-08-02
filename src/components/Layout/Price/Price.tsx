@@ -12,11 +12,10 @@ const Price = () => {
                 <div className="row justify-content-center">
                     <div className="col-md-12">
                         <p>
-                            V současné době poskytuji terapie/konzultace i online přes skype
-                            <a href="skype:Roman Arpáš"> Roman Arpáš.</a>
-                            Na první sezení je potřeba se objednat — telefonicky, smskou či
-                            <a href="mailto:roman.arpas1@gmail.com"> e-mailem</a>. Pokud nezvedám telefon, zanechte mi, prosím,
-                            zprávu. Ozvu se, jakmile to bude možné.
+                            V současné době poskytuji terapie/konzultace i online přes skype&nbsp;
+                            <a href="skype:Roman Arpáš">Roman Arpáš.</a> Na první sezení je potřeba se objednat — telefonicky,
+                            smskou či&nbsp;<a href="mailto:roman.arpas1@gmail.com">e-mailem</a>. Pokud nezvedám telefon, zanechte
+                            mi, prosím, zprávu. Ozvu se, jakmile to bude možné.
                         </p>
                         <p>
                             Jedno setkání trvá <b>55 minut</b>.

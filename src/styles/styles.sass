@@ -1,11 +1,10 @@
-@import '../../node_modules/bootstrap/scss/bootstrap'
-// @import icons
+@import "../../node_modules/bootstrap/scss/bootstrap"
 
 @import url("../../node_modules/normalize.css/normalize.css")
 
-@import url('https://fonts.googleapis.com/css?family=Raleway:300,500,600')
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,600")
 
-// new colors
+
 $primary-color: #0e707d
 $primary-color-light: #5eb8ff
 $primary-color-dark: #0a312c
@@ -71,6 +70,8 @@ body
 
 a
     color: $link-color
+    &:hover
+        color: $secondary-color-light
 
 nav
     font-weight: 500
@@ -112,16 +113,16 @@ h1
         font-size: 2.5em
 
 #terapie
-    background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url(../assets/img/romanisko_portret_cut_SM.svg) calc(100vw - 140px) 0 no-repeat
+    background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_cut_SM.svg") calc(100vw - 140px) 0 no-repeat
     @include media-breakpoint-up(sm)
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url(../assets/img/romanisko_portret_MD.svg) calc(100vw - 200px) 0 no-repeat
+        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 200px) 0 no-repeat
     @include media-breakpoint-up(md)
-        // padding: 8em 1em
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url(../assets/img/romanisko_portret_MD.svg) calc(100vw - 300px) 0 no-repeat
+        
+        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 300px) 0 no-repeat
     @include media-breakpoint-up(lg)
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url(../assets/img/romanisko_portret_MD.svg) calc(100vw - 400px) 0 no-repeat
+        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 400px) 0 no-repeat
     @include media-breakpoint-up(xl)
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url(../assets/img/romanisko_portret_MD.svg) calc(100vw - 530px) 0 no-repeat
+        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 530px) 0 no-repeat
     padding: 100px 1em
     min-height: 100vh
     h2
@@ -130,7 +131,7 @@ h1
         color: rgba($text-color, .8)
         animation: moveInLeft 1.2s ease-out 200ms
     @include media-breakpoint-up(sm)
-        // min-height: auto
+        
         padding: 10em 1em
         font-size: 1.1em
         h2  
@@ -262,7 +263,7 @@ figcaption
 .list-contact-item-break
     hr
         border: none
-        // border-bottom: 1px solid rgba($text-color, 0)
+        
         height: 0.8em
         margin: 0 0 .8em
 
