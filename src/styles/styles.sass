@@ -1,23 +1,4 @@
-@import "../../node_modules/bootstrap/scss/bootstrap"
-
-@import url("../../node_modules/normalize.css/normalize.css")
-
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,600")
-
-
-$primary-color: #0e707d
-$primary-color-light: #5eb8ff
-$primary-color-dark: #0a312c
-$text-color: #000
-$secondary-color: #ffc43e
-$secondary-color-light: #ecc4e3
-$secondary-color-dark: #b87d2f
-$grad-color-start: rgba($primary-color, 0.2)
-$grad-color-end: rgba($primary-color, 0.5) 40%
-$link-color: #000
-$light-blue: #adcce1
-
-$ff: Raleway
+@import "styles/variables.scss"
 
 @keyframes moveInLeft 
   0% 
@@ -70,209 +51,69 @@ body
 
 a
     color: $link-color
+    text-decoration: none
+    font-weight: 600
+
     &:hover
         color: $secondary-color-light
 
-nav
-    font-weight: 500
-    font-size: 1.1em
-    letter-spacing: 1px
+// h1
+//     font-family: $ff
+//     font-size: 1.6rem
+//     line-height: 250%
+//     font-weight: 600
+//     letter-spacing: 1px
+//     color: rgba($text-color, .9)
+//     margin-bottom: 1.3rem
+//     animation: moveInTop 1.2s ease-out 150ms
+//     @media (max-width: 360px)
+//         margin-bottom: .5rem
+//         padding: .1rem 0
+//     @include media-breakpoint-up(md)
+//         margin-bottom: 1.5rem
+//         font-size: 2.5rem
 
-.brand_img
-    width: 45px
-    height: 45px
-    padding-left: 4px
-
-.navbar-light .navbar-nav .nav-link
-    color: $text-color
-    &:hover, &.active
-        color: $secondary-color
-
-.bg-nav
-    background-color: rgba($primary-color, .95) !important
-
-
-.header
-    display: block
-    @include media-breakpoint-up(md)
-        display: inline-block
-
-h1
-    font-size: 1.6em
-    line-height: 1.6
-    font-weight: 600
-    letter-spacing: 1px
-    color: rgba($text-color, .9)
-    margin-bottom: 1.3em
-    animation: moveInTop 1.2s ease-out 150ms
-    @media (max-width: 360px)
-        margin-bottom: .5em
-        padding: .1em 0
-    @include media-breakpoint-up(md)
-        margin-bottom: 1.5em
-        font-size: 2.5em
-
-#terapie
-    background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_cut_SM.svg") calc(100vw - 140px) 0 no-repeat
-    @include media-breakpoint-up(sm)
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 200px) 0 no-repeat
-    @include media-breakpoint-up(md)
+// #terapie
+//     background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_cut_SM.svg") calc(100vw - 140px) 0 no-repeat
+//     @include media-breakpoint-up(sm)
+//         background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 200px) 0 no-repeat
+//     @include media-breakpoint-up(md)
         
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 300px) 0 no-repeat
-    @include media-breakpoint-up(lg)
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 400px) 0 no-repeat
-    @include media-breakpoint-up(xl)
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 530px) 0 no-repeat
-    padding: 100px 1em
-    min-height: 100vh
-    h2
-        font-size: 1.5em
-        padding-left: 5px
-        color: rgba($text-color, .8)
-        animation: moveInLeft 1.2s ease-out 200ms
-    @include media-breakpoint-up(sm)
+//         background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 300px) 0 no-repeat
+//     @include media-breakpoint-up(lg)
+//         background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 400px) 0 no-repeat
+//     @include media-breakpoint-up(xl)
+//         background: linear-gradient(225deg, $grad-color-start, $grad-color-end), url("../assets/img/romanisko_portret_MD.svg") calc(100vw - 530px) 0 no-repeat
+//     padding: 100px 1rem
+//     min-height: 100vh
+//     h2
+//         font-size: 1.5rem
+//         padding-left: 5px
+//         color: rgba($text-color, .8)
+//         animation: moveInLeft 1.2s ease-out 200ms
+//     @include media-breakpoint-up(sm)
         
-        padding: 10em 1em
-        font-size: 1.1em
-        h2  
-            font-size: 2em
-            margin-bottom: 1.5em
+//         padding: 10rem 1rem
+//         font-size: 1.1rem
+//         h2  
+//             font-size: 2rem
+//             margin-bottom: 1.5rem
 
 section
-    padding: 100px 1em
-    min-height: 95vh
+    padding: 6rem 1rem
+    min-height: 80vh
     h2
-      margin-bottom: 1em
-      font-size: 1.5em
+      margin-bottom: 1rem
+      font-size: 1.5rem
       color: rgba($text-color, .8)
     @include media-breakpoint-up(sm)
         min-height: auto
-        padding: 10em 1em
-        font-size: 1.1em
+        padding: 10rem 1rem
+        font-size: 1.1rem
         h2 
-            font-size: 2em
-            margin-bottom: 1.5em
+            font-size: 2rem
+            margin-bottom: 1.5rem
 
 p 
     text-align: justify
-
-em 
-    font-style: normal
-    background: rgba(255, 255, 255, .7)
-    padding: .1em .3em
-    @include media-breakpoint-up(md)
-        line-height: 1.3em 
-
-figcaption
-  text-align: right
-
-.visible
-    display: block
-
-.list-services
-    padding-left: 0
-    list-style: none
-    animation: moveInRight 1.2s ease-out 200ms
-    span
-        line-height: 1.2em
-        display: inline-flex
-        vertical-align: middle
-        width: 50%
-        @include media-breakpoint-up(md)
-            width: 70%
-
-.list-services-item 
-    font-size: 1.1em
-    line-height: 2em
-    cursor: pointer
-    @include media-breakpoint-up(md)
-        font-size: 1.3em
-
-.list-issues
-    list-style: none
-    margin: -0.2em 0 1em 1.5em
-    line-height: 1.28em
-    display: none
-    width: 70%
-    @include media-breakpoint-up(md)
-        width: 100%
-        line-height: 1.6em
-
-.list-issues-item
-    font-size: .8em
-    padding: .5em .5em .1em 0
-    @include media-breakpoint-up(md)    
-        font-size: 1em
-
-.img-thumbnail
-    width: 200px
-    min-width: 200px
-    margin-bottom: 50px
-    margin-top: 1.5em
-    @include media-breakpoint-up(md)
-        margin-top: .5em
-
-.foto-align
-    text-align: center
-    @include media-breakpoint-up(md)
-        text-align: right
-.foto-align-left
-    text-align: center
-    @include media-breakpoint-up(md)
-        text-align: left
-
-#what
-    background: $light-blue
-    background-position: center
-    background-repeat: no-repeat
-    background-size: cover
-
-
-#who
-    background: linear-gradient(160deg, rgba($primary-color, .6) 10%, $primary-color)
-
-
-#price
-    background: linear-gradient(160deg, rgba($light-blue, .6) 10%, $light-blue)
-    @include media-breakpoint-up(sm)
-        font-size: 1.1em
-
-
-#contact
-    background: linear-gradient(225deg, rgba($primary-color-light, .6) 10%, rgba($primary-color-dark, .9))
-    background-position: center
-    background-repeat: no-repeat
-    background-size: cover
-    @include media-breakpoint-up(sm)
-        font-size: 1.1em
-
-.list-contact
-    list-style: none
-    padding-left: 0
-    font-size: 1em
-    line-height: 1.6em
-    &:last-of-type
-        margin-bottom: 4em
-
-.list-contact-item-header
-    font-weight: 500
-    font-size: 1.6em
-    color: rgba($text-color, .6)
-    margin-bottom: .25em
-
-.list-contact-item-break
-    hr
-        border: none
-        
-        height: 0.8em
-        margin: 0 0 .8em
-
-
-#footer
-    height: 100px 
-    font-size: 0.9em
-    padding: 40px 1em 9px
-    @include media-breakpoint-up(md)
-        font-size: 1em
-    a   
-        color: $link-color
+    line-height: 1.7

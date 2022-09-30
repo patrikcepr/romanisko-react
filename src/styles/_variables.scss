@@ -1,0 +1,22 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import "https://fonts.googleapis.com/css?family=Raleway:300,500,600";
+
+$primary-color: #0e707d;
+$primary-color-light: #5eb8ff;
+$primary-color-dark: #0a312c;
+$secondary-color: #ffc43e;
+$secondary-color-light: #ecc4e3;
+$secondary-color-dark: #b87d2f;
+$text-color: #000;
+$white: #fff;
+$grad-color-start: rgba($primary-color, 0.2);
+$grad-color-end: rgba($primary-color, 0.5) 40%;
+$link-color: #000;
+$light-blue: #adcce1;
+$ff: raleway;
+
+a {
+    text-decoration: none;
+    font-weight: 600;
+}

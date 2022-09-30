@@ -1,53 +1,46 @@
 import { useRef } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+
+import styles from "./Contact.module.scss";
 
 const Contact = () => {
     const contactRef = useRef(null);
 
     return (
-        <section className="container-fluid d-flex align-items-center" id="contact" ref={contactRef}>
-            <div className="container">
-                <div className="row justify-content-center">
-                    <h2>Kontakt</h2>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-md-12 col-lg-4">
-                        <ul className="list-contact">
-                            <li className="list-contact-item">Kafkova 35</li>
-                            <li className="list-contact-item">Praha 6</li>
-                            <li className="list-contact-item">
+        <Container as="section" fluid="true" className={`shadow-lg px-lg-5 ${styles.contact}`} id="contact" ref={contactRef}>
+            <Container fluid="lg" className="px-md-5">
+                <Row className="justify-content-center flex-column-reverse-sm">
+                    <Col md={10} lg={7}>
+                        <iframe
+                            title="Map"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d639.812932241724!2d14.42240872926363!3d50.100295058960135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94c536401c7f%3A0x7cf0521a90c39527!2sLetensk%C3%A9%20n%C3%A1m.%201%2C%20170%2000%20Praha%207-Hole%C5%A1ovice!5e0!3m2!1sen!2scz!4v1664530760051!5m2!1sen!2scz"
+                            width="100%"
+                            height="450"
+                            scrolling="no"
+                            // style="border:0;"
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
+                    </Col>
+                    <Col md={10} lg={3} className="pt-5 pt-lg-0">
+                        <h2>Kontakt</h2>
+                        <ul className={styles["list-contact"]}>
+                            <li className={styles["list-contact__item"]}>Letenské náměstí 1</li>
+                            <li className={styles["list-contact__item"]}>Praha 7</li>
+                            <li className={styles["list-contact__item"]}>
                                 Tel.: <a href="tel:+420773242200">+420 773 242 200</a>
                             </li>
-                            <li className="list-contact-item">
+                            <li className={styles["list-contact__item"]}>
                                 E-mail: <a href="mailto:roman.arpas1@gmail.com">Roman Arpáš</a>
                             </li>
-                            <li className="list-contact-item">
+                            <li className={styles["list-contact__item"]}>
                                 Skype: <a href="skype:Roman Arpáš">Roman Arpáš</a>
                             </li>
-                            <li className="list-contact-item-break">
-                                <hr />
-                            </li>
                         </ul>
-                    </div>
-                    <div className="col-md-12 col-lg-8">
-                        <div className="mapouter">
-                            <div className="gmap_canvas">
-                                <iframe
-                                    title="Map"
-                                    width="100%"
-                                    height="450"
-                                    id="gmap_canvas"
-                                    src="https://maps.google.com/maps?q=Kafkova%2035&t=&z=17&ie=UTF8&iwloc=&output=embed"
-                                    // frameborder="0"
-                                    scrolling="no"
-                                    // marginheight="0"
-                                    // marginwidth="0"
-                                ></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     );
 };
 

@@ -1,18 +1,21 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
-const Price = () => {
+import styles from "./Price.module.scss";
+
+export const Price = () => {
     const priceRef = useRef(null);
 
     return (
-        <section className="container-fluid d-flex align-items-center" id="price" ref={priceRef}>
-            <div className="container">
-                <div className="row justify-content-center">
+        <Container as="section" fluid id="price" className={`shadow-lg px-lg-5 ${styles.price}`} ref={priceRef}>
+            <Container fluid="lg" className="px-md-5">
+                <Row className="text-center mb-5">
                     <h2>Ceník</h2>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-md-12">
+                </Row>
+                <Row className="justify-content-center">
+                    <Col md={10}>
                         <p>
-                            V současné době poskytuji terapie/konzultace i online přes skype&nbsp;
+                            V současné době kromě klasických sezení poskytuji konzultace i terapie online přes skype&nbsp;
                             <a href="skype:Roman Arpáš">Roman Arpáš.</a> Na první sezení je potřeba se objednat — telefonicky,
                             smskou či&nbsp;<a href="mailto:roman.arpas1@gmail.com">e-mailem</a>. Pokud nezvedám telefon, zanechte
                             mi, prosím, zprávu. Ozvu se, jakmile to bude možné.
@@ -29,11 +32,9 @@ const Price = () => {
                             Pokud se v domluveném termínu nemůžete dostavit, je potřeba mě informovat nejpozději den předem a to
                             nejlépe telefonicky, případně sms nebo e-mailem.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     );
 };
-
-export default Price;

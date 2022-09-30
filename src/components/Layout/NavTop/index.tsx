@@ -1,11 +1,13 @@
-import { Container, Nav, Navbar, Image } from "react-bootstrap";
-import gestaltIcon from "../../../assets/img/gestaltIcon.png";
+import gestaltIcon from "assets/img/gestaltIcon.png";
+import { Container, Image, Nav, Navbar } from "react-bootstrap";
+
+import styles from "./NavTop.module.scss";
 
 const NavTop = () => {
     return (
         <header>
-            <Navbar expand="md" fixed="top" className="mb-5 justify-content-center bg-nav shadow">
-                <Container fluid="md">
+            <Navbar expand="md" fixed="top" className={`justify-content-center bg-nav shadow `}>
+                <Container fluid="md" className={styles["nav-top"]}>
                     <Navbar.Brand href="#terapie">
                         <Image src={gestaltIcon} height="64" alt="Roman Arpáš - terapeut" />
                     </Navbar.Brand>
