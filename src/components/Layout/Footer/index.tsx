@@ -1,6 +1,6 @@
 import styles from "./Footer.module.scss";
 
-const Footer = () => {
+export const Footer = () => {
     return (
         <footer className={`container-fluid ${styles.footer}`} id="footer">
             <div className="container">
@@ -17,5 +17,3 @@ const Footer = () => {
         </footer>
     );
 };
-
-export default Footer;

@@ -1,17 +1,16 @@
 import { useRef } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
-// import "styles/styles.sass";
 import styles from "./Terapie.module.scss";
 
 export const Terapie = () => {
     const terapieRef = useRef(null);
     return (
-        <Container as="section" fluid className={`shadow-lg ${styles.terapie}`} id="terapie" ref={terapieRef}>
-            <Container fluid="lg">
+        <Container as="section" fluid className={`shadow-lg px-lg-5 ${styles.terapie}`} id="terapie" ref={terapieRef}>
+            <Container fluid="lg" className="px-md-5">
                 <Row className="justify-content-center">
                     <Col md={10} className={` ${styles.header}`}>
-                        <h1>Psychoterapie Praha - Roman Arpáš</h1>
+                        <h1 className="text-shadow">Psychoterapie Praha - Roman Arpáš</h1>
                     </Col>
                 </Row>
                 <Row className="justify-content-center">

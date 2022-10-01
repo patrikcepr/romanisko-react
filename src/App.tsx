@@ -1,8 +1,8 @@
 import "styles/styles.sass";
 
-import Contact from "components/Layout/Contact/Contact";
-import Footer from "components/Layout/Footer";
-import Hands from "components/Layout/Hands/Hands";
+import { Contact } from "components/Layout/Contact/Contact";
+import { Footer } from "components/Layout/Footer";
+import { Hands } from "components/Layout/Hands/Hands";
 import NavTop from "components/Layout/NavTop";
 import { Price } from "components/Layout/Price/Price";
 import { Terapie } from "components/Layout/Terapie/Terapie";

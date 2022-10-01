@@ -18,7 +18,7 @@ export const Who = () => {
                             <Image
                                 src={Romanko}
                                 alt="Roman ArpášPsychoterapie Praha - Roman Arpáš"
-                                className="img-fluid shadow"
+                                className="img-fluid shadow-lg"
                             />
                             <figcaption className="pt-2 text-end">
                                 &copy;&nbsp;2021&nbsp;

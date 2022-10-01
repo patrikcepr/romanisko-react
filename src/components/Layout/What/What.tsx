@@ -7,7 +7,7 @@ export const What = () => {
     const whatRef = useRef(null);
     return (
         <Container as="section" fluid className={`shadow-lg px-lg-5 ${styles.what}`} id="what" ref={whatRef}>
-            <Container fluid="lg" className="px-lg-5">
+            <Container fluid="lg" className="px-md-5">
                 <Row className="text-center pb-5">
                     <h2>Jak pracuji</h2>
                 </Row>
