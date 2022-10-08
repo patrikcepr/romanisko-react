@@ -1,0 +1,18 @@
+@import "styles/variables.scss";
+
+.who {
+    background: linear-gradient(160deg, rgba($primary-color, 0.6) 10%, $primary-color);
+
+    img {
+        border-radius: 1rem;
+    }
+
+    a {
+        color: $link-color;
+        font-weight: 600;
+
+        &:hover {
+            color: $white;
+        }
+    }
+}

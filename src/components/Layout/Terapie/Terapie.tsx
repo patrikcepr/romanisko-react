@@ -1,38 +1,41 @@
 import { useRef } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
-const Terapie = () => {
+import styles from "./Terapie.module.scss";
+
+export const Terapie = () => {
     const terapieRef = useRef(null);
     return (
-        <section className="container-fluid d-flex align-items-center" id="terapie" ref={terapieRef}>
-            <div className="container">
-                <div className="row justify-content-center">
-                    <div className="col-md-12 header">
-                        <h1>Terapeut Roman Arpáš</h1>
-                    </div>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-md-12">
+        <Container as="section" fluid className={`shadow-lg px-lg-5 ${styles.terapie}`} id="terapie" ref={terapieRef}>
+            <Container fluid="lg" className="px-md-5">
+                <Row className="justify-content-center">
+                    <Col md={10} className={` ${styles.header}`}>
+                        <h1 className="text-shadow">Psychoterapie Praha - Roman Arpáš</h1>
+                    </Col>
+                </Row>
+                <Row className="justify-content-center">
+                    <Col md={10}>
                         <h2>Proč mě vyhledat?</h2>
-                        <ul className="list-services">
-                            <li className="list-services-item">
-                                - Duševní problémy jako deprese, úzkost, myšlenky na sebevraždu a sebevražedné chování.
+                        <ul className={styles["list-services"]}>
+                            <li className={styles["list-services__item"]}>
+                                - značný stres, problémy ve vztazích, v práci nebo jiných oblastech života
                             </li>
-                            <li className="list-services-item">
-                                - Značný stres nebo problémy ve vztazích, práci nebo dalších oblastech života.
+                            <li className={styles["list-services__item"]}>
+                                - duševní problémy jako deprese, úzkost, pocity méněcennosti a viny
                             </li>
-                            <li className="list-services-item">
-                                - Ztráta vzpomínek (paměti) na určité časové období, události, lidi a osobní informace.
+                            <li className={styles["list-services__item"]}>
+                                - ztráta vzpomínek na určité časové období, události, lidi či osobní informace
                             </li>
-                            <li className="list-services-item">- Vnímání okolních lidí a věcí jakoby zkresleně nebo nereálně.</li>
-                            <li className="list-services-item">- Pocit odpoutání od sebe sama a svých emocí.</li>
-                            <li className="list-services-item">- Nejasný pocit vlastní identity.</li>
-                            <li className="list-services-item">- Neschopnost dobře zvládat emoční nebo profesní stres.</li>
+                            <li className={styles["list-services__item"]}>- nejasný pocit vlastní identity</li>
+                            <li className={styles["list-services__item"]}>- myšlenky na sebevraždu, sebevražedné chování</li>
+                            <li className={styles["list-services__item"]}>- objevování a využítí vlastního potenciálu</li>
+                            <li className={styles["list-services__item"]}>
+                                - nalézání smyslu bytí, moudrosti, nadhledu i humoru
+                            </li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     );
 };
-
-export default Terapie;

@@ -1,15 +1,18 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 
-const What = () => {
+import styles from "./What.module.scss";
+
+export const What = () => {
     const whatRef = useRef(null);
     return (
-        <section className="container-fluid d-flex align-items-center" id="what" ref={whatRef}>
-            <div className="container">
-                <div className="row justify-content-center">
+        <Container as="section" fluid className={`shadow-lg px-lg-5 ${styles.what}`} id="what" ref={whatRef}>
+            <Container fluid="lg" className="px-md-5">
+                <Row className="text-center pb-5">
                     <h2>Jak pracuji</h2>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-md-12">
+                </Row>
+                <Row className="justify-content-center">
+                    <Col md={10}>
                         <p>
                             Jako terapeut jsem aktivně přítomen - vidím, slyším a prožívám to, co prožíváte TADY a TEĎ. Při
                             naslouchání se snažím porozumět jak se organizujete ve svém sociálním okolí. Společně hledáme a
@@ -23,11 +26,9 @@ const What = () => {
                             Úzkost a deprese využívají ke své realizaci tělo. Proto na terapii věnuji pozornost i propojení emocí
                             s tělesným prožíváním.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     );
 };
-
-export default What;

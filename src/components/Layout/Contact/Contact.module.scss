@@ -1,0 +1,40 @@
+@import "styles/variables";
+
+.contact {
+    background: linear-gradient(225deg, rgba($primary-color-light, 0.6) 10%, rgba($primary-color-dark, 0.9));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @include media-breakpoint-up(sm) {
+        font-size: 1.1rem;
+    }
+
+    a {
+        color: $link-color;
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+.list-contact {
+    list-style: none;
+    padding-left: 0;
+    font-size: 1.25rem;
+    line-height: 1.8rem;
+
+    &:last-of-type {
+        margin-bottom: 4rem;
+    }
+
+    &__item {
+        font-weight: 600;
+        color: rgba($text-color, 0.6);
+        margin-bottom: 0.25rem;
+
+        a {
+            padding-left: 0.7rem;
+        }
+    }
+}

@@ -1,0 +1,39 @@
+@import "styles/variables";
+
+nav {
+    background-color: rgba($primary-color, 0.5);
+    backdrop-filter: blur(8px) saturate(40%) brightness(125%);
+}
+
+.nav-top {
+    a {
+        color: $white;
+        font-weight: 600;
+
+        &:hover {
+            color: $secondary-color-dark;
+        }
+    }
+
+    nav {
+        font-weight: 500;
+        font-size: 1.1em;
+        letter-spacing: 1px;
+    }
+
+    .brand_img {
+        width: 45px;
+        height: 45px;
+        padding-left: 4px;
+    }
+
+    & .navbar-light {
+        .navbar-nav .nav-link {
+            color: $text-color;
+            &:hover,
+            &.active {
+                color: $secondary-color;
+            }
+        }
+    }
+}

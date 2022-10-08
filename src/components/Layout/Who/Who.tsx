@@ -1,28 +1,34 @@
-import React, { useRef } from "react";
-import { Image } from "react-bootstrap";
-import Romanko from "../../../assets/img/DSC_3060.jpg";
+import Romanko from "assets/img/DSC_3060.jpg";
+import { useRef } from "react";
+import { Col, Container, Image, Row } from "react-bootstrap";
 
-const Who = () => {
+import styles from "./Who.module.scss";
+
+export const Who = () => {
     const whoRef = useRef(null);
     return (
-        <section className="container-fluid d-flex align-items-center" id="who" ref={whoRef}>
-            <div className="container">
-                <div className="row justify-content-center">
+        <Container as="section" fluid className={`shadow-lg px-lg-5 ${styles.who}`} id="who" ref={whoRef}>
+            <Container fluid="lg" className="px-md-5">
+                <Row className="text-center mb-5">
                     <h2>Moje cesta k psychoterapii</h2>
-                </div>
-                <div className="row justify-content-center">
-                    <div className="col-md-6 text-center">
+                </Row>
+                <Row className="gap-lg-3 gap-xl-5 justify-content-center">
+                    <Col md={10} lg={3} xl={5}>
                         <figure>
-                            <Image src={Romanko} alt="Roman Arpáš" className="img-fluid" />
-                            <figcaption>
+                            <Image
+                                src={Romanko}
+                                alt="Roman ArpášPsychoterapie Praha - Roman Arpáš"
+                                className="img-fluid shadow-lg"
+                            />
+                            <figcaption className="pt-2 text-end">
                                 &copy;&nbsp;2021&nbsp;
                                 <a href="https://petermatas.com/" target="_blank" rel="noreferrer noopener">
                                     Peter Matas
                                 </a>
                             </figcaption>
                         </figure>
-                    </div>
-                    <div className="col-md-6">
+                    </Col>
+                    <Col md={10} lg={7} xl={5}>
                         <p>
                             Vystudoval jsem psychopedii. Po vysoké škole jsem 8 let pracoval v ústavu s mentálně a fyzicky
                             hendikepovanými. Následně jsem 16 let strávil v korporátu na HR, jako kouč a trenér v rozvoji
@@ -38,11 +44,9 @@ const Who = () => {
                             Kromě poznávaní lidských osudů mám rád třeba film Světáci, slovenský folklór, život čmeláků, komiksy,
                             čistou vodu, svět Harryho Pottera a bramboráky.
                         </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+                    </Col>
+                </Row>
+            </Container>
+        </Container>
     );
 };
-
-export default Who;
