@@ -10,7 +10,7 @@ export const Contact = () => {
     return (
         <Container as="section" fluid="true" className={`shadow-lg px-lg-5 ${styles.contact}`} id="contact" ref={contactRef}>
             <Container fluid="lg" className="px-md-5">
-                <Row className="justify-content-center flex-column-reverse-sm gap-lg-4">
+                <Row className="justify-content-center flex-column-reverse-sm gap-lg-5">
                     <Col md={10} lg={7}>
                         <iframe
                             title="Map"
@@ -18,7 +18,7 @@ export const Contact = () => {
                             width="100%"
                             height="420"
                             scrolling="no"
-                            // style="border:0;"
+                            style={{ border: 0, borderRadius: "1rem" }}
                             className="shadow-lg"
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
