@@ -1,10 +1,10 @@
 import handsPict from "assets/img/IMG-20210525-WA0027.jpg";
-import { Image } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 
 export const Hands = () => {
     return (
-        <div id="hands" className="shadow">
-            <Image src={handsPict} alt="Ruce" className="img-fluid shadow" />
-        </div>
+        <Container fluid="true" id="hands" className="shadow">
+            <Image src={handsPict} alt="Ruce" className="img-fluid shadow" style={{ width: "100%" }} />
+        </Container>
     );
 };
