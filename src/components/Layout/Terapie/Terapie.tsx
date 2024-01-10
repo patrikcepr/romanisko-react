@@ -23,9 +23,6 @@ export const Terapie = () => {
                             <li className={styles["list-services__item"]}>
                                 - duševní problémy jako deprese, úzkost, pocity méněcennosti a viny
                             </li>
-                            <li className={styles["list-services__item"]}>
-                                - ztráta vzpomínek na určité časové období, události, lidi či osobní informace
-                            </li>
                             <li className={styles["list-services__item"]}>- nejasný pocit vlastní identity</li>
                             <li className={styles["list-services__item"]}>- myšlenky na sebevraždu, sebevražedné chování</li>
                             <li className={styles["list-services__item"]}>- objevování a využítí vlastního potenciálu</li>
