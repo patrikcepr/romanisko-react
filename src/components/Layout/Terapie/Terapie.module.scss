@@ -4,47 +4,6 @@
     background: linear-gradient(225deg, $grad-color-start, $grad-color-end),
         url("../../../assets/img/romanisko_portret_cut_SM.svg") calc(100vw - 140px) 0 no-repeat;
 
-    h1 {
-        font-family: $ff;
-        font-size: 1.6rem;
-        line-height: 1.7;
-        font-weight: 600;
-        letter-spacing: 1px;
-        color: rgba($text-color, 0.9);
-        margin-top: 6rem;
-        margin-bottom: 1.3rem;
-        animation: moveInTop 1.2s ease-out 150ms;
-
-        @media (max-width: 360px) {
-            margin-bottom: 0.5rem;
-            padding: 0.1rem 0;
-        }
-
-        @include media-breakpoint-up(md) {
-            margin-top: 10vh;
-            margin-bottom: 1.5rem;
-            font-size: 2.2rem;
-        }
-
-        @include media-breakpoint-up(lg) {
-            margin-top: 20vh;
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-        }
-    }
-
-    h2 {
-        font-size: 1.5rem;
-        color: rgba($text-color, 0.8);
-        animation: moveInLeft 1.2s ease-out 200ms;
-        margin-bottom: 1.5rem;
-
-        @include media-breakpoint-up(lg) {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-        }
-    }
-
     @include media-breakpoint-up(sm) {
         background: linear-gradient(225deg, $grad-color-start, $grad-color-end),
             url("../../../assets/img/romanisko_portret_MD.svg") calc(100vw - 200px) 0 no-repeat;
@@ -66,6 +25,59 @@
             url("../../../assets/img/romanisko_portret_MD.svg") calc(100vw - 530px) 0 no-repeat;
         padding: 100px 1rem;
         min-height: 100vh;
+    }
+
+    h1 {
+        font-family: $ff;
+        font-size: 20px;
+        line-height: 1.7;
+        font-weight: 600;
+        letter-spacing: 1px;
+        color: rgba($text-color, 0.9);
+        margin-top: 6rem;
+        margin-bottom: 1.3rem;
+        animation: moveInTop 1.2s ease-out 150ms;
+
+        @media (max-width: 360px) {
+            margin-bottom: 0.5rem;
+            padding: 0.1rem 0;
+        }
+
+        @include media-breakpoint-up(md) {
+            margin-top: 10vh;
+            margin-bottom: 1.5rem;
+            font-size: 32px;
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 20vh;
+            margin-bottom: 1.5rem;
+            font-size: 40px;
+        }
+    }
+
+    h2 {
+        font-size: 18px;
+        color: rgba($text-color, 0.8);
+        animation: moveInLeft 1.2s ease-out 200ms;
+        margin-bottom: 1.5rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 32px;
+            margin-bottom: 2rem;
+        }
+    }
+
+    h3 {
+        font-size: 16px;
+        line-height: 160%;
+        color: rgba($text-color, 0.9);
+        margin-bottom: 1.5rem;
+
+        @include media-breakpoint-up(lg) {
+            font-size: 28px;
+            margin-bottom: 2rem;
+        }
     }
 }
 

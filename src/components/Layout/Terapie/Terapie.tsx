@@ -8,14 +8,14 @@ export const Terapie = () => {
     return (
         <Container as="section" fluid className={`shadow-lg px-lg-5 ${styles.terapie}`} id="terapie" ref={terapieRef}>
             <Container fluid="lg" className="px-md-5">
-                <Row className="justify-content-center">
-                    <Col md={10} className={` ${styles.header}`}>
+                <Row className="justify-content-start justify-content-lg-center">
+                    <Col md={10} className={styles.header}>
                         <h1 className="text-shadow">Psychoterapie Praha - Roman Arpáš</h1>
                     </Col>
                 </Row>
-                <Row className="justify-content-center">
-                    <Col md={10}>
-                        <h2>Proč mě vyhledat?</h2>
+                <Row className="justify-content-start justify-content-lg-center">
+                    <Col md={9} lg={10}>
+                        <h2>Nejčastěji probírám sklienty tyto oblasti:</h2>
                         <ul className={styles["list-services"]}>
                             <li className={styles["list-services__item"]}>
                                 - značný stres, problémy ve vztazích, v práci nebo jiných oblastech života
@@ -31,6 +31,12 @@ export const Terapie = () => {
                             </li>
                         </ul>
                     </Col>
+                </Row>
+                <Row className="justify-content-start justify-content-lg-center">
+                    <Col md={7}>
+                        <h3>Cílem našich sezení je převzít plnou odpovědnost za svůj život a hlásit se ke své důstojnosti.</h3>
+                    </Col>
+                    <Col md={3} />
                 </Row>
             </Container>
         </Container>

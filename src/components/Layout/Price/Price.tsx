@@ -25,8 +25,7 @@ export const Price = () => {
                         </p>
                         <p>
                             Terapie není hrazena zdravotní pojišťovnou. Cena jednoho sezení je <b>1000 Kč</b>. Platba je možná
-                            převodem na účet nebo v hotovosti. V případě Vaší potřeby sezení v průběhu víkendu nebo svátku je cena
-                            sezení <b>1100 Kč</b>.
+                            převodem na účet nebo v hotovosti.
                         </p>
                         <p>
                             Pokud se v domluveném termínu nemůžete dostavit, je potřeba mě informovat nejpozději den předem a to
