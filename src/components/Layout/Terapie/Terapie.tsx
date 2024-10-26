@@ -15,7 +15,7 @@ export const Terapie = () => {
                 </Row>
                 <Row className="justify-content-start justify-content-lg-center">
                     <Col md={9} lg={10}>
-                        <h2>Nejčastěji probírám sklienty tyto oblasti:</h2>
+                        <h2>Nejčastěji probírám s klienty tyto oblasti:</h2>
                         <ul className={styles["list-services"]}>
                             <li className={styles["list-services__item"]}>
                                 - značný stres, problémy ve vztazích, v práci nebo jiných oblastech života
