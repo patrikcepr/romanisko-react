@@ -1,7 +1,7 @@
 {
-    "*.css": "yarn stylelint --fix",
-    "*.{sass,scss}": "yarn stylelint --customSyntax postcss-scss --fix",
-    "*.{ts,tsx}": ["yarn eslint --fix", "yarn prettier --write"],
-    "*.{js}": ["yarn eslint --fix", "yarn prettier --write"],
-    "*.{md,json}": "yarn prettier --write"
+    "*.css": "npx stylelint --fix",
+    "*.{sass,scss}": "npx stylelint --customSyntax postcss-scss --fix",
+    "*.{ts,tsx}": ["npx eslint --fix", "npx prettier --write"],
+    "*.{js}": ["npx eslint --fix", "npx prettier --write"],
+    "*.{md,json}": "npx prettier --write"
 }
