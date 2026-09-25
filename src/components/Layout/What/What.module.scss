@@ -1,8 +1,86 @@
-@import "styles/variables";
+@use 'styles/mixins' as *;
 
+// Mobile/tablet: text, then the artwork dissolving in from the top.
+// Desktop: text aligned to the page container, artwork on the right bleeding to the viewport edge,
+// dissolving into the page from the left.
 .what {
-    background: $light-blue;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(var(--gutter), 1fr)
+        [content-start] minmax(0, var(--container))
+        [content-end] minmax(var(--gutter), 1fr)
+        [full-end];
+    padding-top: var(--section-space);
+
+    @include up(lg) {
+        grid-template-columns:
+            [full-start] minmax(var(--gutter), 1fr)
+            [content-start] minmax(0, calc(var(--container) * 0.5))
+            [half] minmax(0, calc(var(--container) * 0.5))
+            [content-end] minmax(var(--gutter), 1fr)
+            [full-end];
+        align-items: center;
+        padding-top: 0;
+    }
+}
+
+.text {
+    grid-column: content;
+    max-width: 38rem;
+    color: #22302f;
+    line-height: 1.65;
+
+    @include up(lg) {
+        grid-row: 1;
+        grid-column: content-start / half;
+        position: relative;
+        z-index: 1;
+        padding-block: var(--section-space);
+        padding-right: 1rem;
+    }
+}
+
+.title {
+    color: #161f1f;
+    font-weight: 600;
+}
+
+.credit {
+    margin-top: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: var(--fs-xs);
+    letter-spacing: 0.02em;
+}
+
+.figure {
+    grid-column: full;
+    margin: 0.5rem 0 0;
+
+    @include up(lg) {
+        grid-row: 1;
+        grid-column: half / full;
+        align-self: stretch;
+        margin: 0 0 0 -8%;
+    }
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 10 / 9;
+    object-fit: cover;
+    object-position: 58% 50%;
+    mask-image: url('../../../assets/redesign/masks/brush-edge-top.png');
+    mask-size: 100% 100%;
+
+    @include up(sm) {
+        aspect-ratio: 4 / 3;
+    }
+
+    @include up(lg) {
+        height: 100%;
+        min-height: clamp(30rem, 38vw, 42rem);
+        aspect-ratio: auto;
+        object-position: 62% 30%;
+        mask-image: url('../../../assets/redesign/masks/brush-edge-left.png');
+    }
 }

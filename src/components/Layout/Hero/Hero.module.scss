@@ -1,0 +1,128 @@
+@use 'styles/mixins' as *;
+
+// Artwork sits in its own layer on the right edge; its left side dissolves into the page via a brush mask.
+// Mobile/tablet: a narrow vertical strip next to the text (as in the mockup), never under the text.
+.hero {
+    position: relative;
+    isolation: isolate;
+    padding-block: clamp(2rem, 1.2rem + 2.4vw, 4rem) clamp(2.5rem, 1.5rem + 2.4vw, 3.25rem);
+}
+
+.art {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 24%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 88% 50%;
+    mask-image: url('../../../assets/redesign/masks/brush-edge-left.png');
+    mask-size: 100% 100%;
+    pointer-events: none;
+
+    @include up(md) {
+        width: 32%;
+    }
+
+    @include up(lg) {
+        width: 44%;
+        object-position: 100% 50%;
+    }
+
+    @include up(xl) {
+        width: 47%;
+    }
+}
+
+.text {
+    max-width: calc(76% - 0.75rem);
+
+    :global(.eyebrow) {
+        white-space: nowrap;
+
+        @include down(sm) {
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+        }
+    }
+
+    :global(.btn) {
+        white-space: nowrap;
+
+        @include down(sm) {
+            padding-inline: 1.375rem;
+            font-size: 1rem;
+        }
+    }
+
+    @include up(md) {
+        max-width: 60%;
+    }
+
+    @include up(lg) {
+        max-width: 40rem;
+    }
+}
+
+.title {
+    margin-bottom: clamp(1rem, 0.8rem + 0.6vw, 1.375rem);
+    color: #141d1d;
+    font-size: var(--fs-h1);
+    letter-spacing: -0.02em;
+    line-height: 1.04;
+}
+
+.lead {
+    max-width: 34rem;
+    margin-bottom: clamp(1.5rem, 1.2rem + 0.8vw, 1.875rem);
+    color: var(--color-lead);
+    font-size: clamp(1.0625rem, 0.98rem + 0.3vw, 1.25rem);
+    line-height: 1.45;
+}
+
+.br {
+    @include down(lg) {
+        display: none;
+    }
+}
+
+.facts {
+    display: grid;
+    gap: 1.125rem;
+    margin: clamp(1.5rem, 1.2rem + 1vw, 2rem) 0 0;
+    padding: 0;
+    list-style: none;
+
+    @include up(lg) {
+        grid-template-columns: repeat(3, auto);
+        justify-content: start;
+        gap: 1rem clamp(2rem, 3.5vw, 3.5rem);
+    }
+}
+
+.fact {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    line-height: 1.3;
+}
+
+.fact-icon {
+    flex: none;
+    color: var(--color-teal);
+}
+
+.fact-value {
+    display: block;
+    color: var(--color-heading);
+    font-size: 1.0625rem;
+    font-weight: 600;
+}
+
+.fact-label {
+    display: block;
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+}

@@ -1,6 +1,9 @@
 {
     "extends": ["stylelint-config-standard-scss", "stylelint-config-sass-guidelines"],
     "rules": {
-        "indentation": 4
+        "indentation": 4,
+        "order/order": null,
+        "order/properties-alphabetical-order": null,
+        "selector-pseudo-class-no-unknown": [true, { "ignorePseudoClasses": ["global", "local"] }]
     }
 }

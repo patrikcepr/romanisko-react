@@ -1,18 +1,89 @@
-@import "styles/variables.scss";
+@use 'styles/mixins' as *;
+
+// Desktop: dark "O mně" panel (bleeding to the left edge) + light practical-info aside (bleeding right).
+.band {
+    display: grid;
+    grid-template-columns:
+        [full-start] minmax(var(--gutter), 1fr)
+        [content-start] minmax(0, var(--container))
+        [content-end] minmax(var(--gutter), 1fr)
+        [full-end];
+
+    @include up(lg) {
+        grid-template-columns:
+            [full-start] minmax(var(--gutter), 1fr)
+            [content-start] minmax(0, calc(var(--container) * 0.73))
+            [split] minmax(0, calc(var(--container) * 0.27))
+            [content-end] minmax(var(--gutter), 1fr)
+            [full-end];
+    }
+}
 
 .who {
-    background: linear-gradient(160deg, rgba($primary-color, 0.6) 10%, $primary-color);
+    display: grid;
+    grid-column: full;
+    grid-template-columns: subgrid;
+    padding-block: var(--section-space);
+    background: var(--color-teal-dark);
+    color: var(--color-on-dark-muted);
 
-    img {
-        border-radius: 1rem;
+    ::selection {
+        background: rgb(231 168 119 / 45%);
     }
+
+    @include up(lg) {
+        grid-column: full-start / split;
+    }
+}
+
+.inner {
+    grid-column: content;
+
+    @include up(lg) {
+        grid-column: content-start / split;
+        padding-right: clamp(2rem, 4vw, 3.5rem);
+    }
+}
+
+.title {
+    color: var(--color-on-dark);
+}
+
+.content {
+    display: grid;
+    gap: 1.5rem;
+
+    @include up(md) {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+        align-items: start;
+        gap: clamp(1.5rem, 2.5vw, 2.25rem);
+    }
+}
+
+.photo {
+    margin: 0;
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 66% 35%;
+    border-radius: var(--radius);
+}
+
+.credit {
+    margin-top: 0.5rem;
+    color: rgb(244 241 233 / 70%);
+    font-size: var(--fs-xs);
 
     a {
-        color: $link-color;
-        font-weight: 600;
-
-        &:hover {
-            color: $white;
-        }
+        color: var(--color-on-dark);
     }
+}
+
+.story {
+    max-width: 62ch;
+    font-size: clamp(1rem, 0.96rem + 0.1vw, 1.0625rem);
+    line-height: 1.6;
 }
