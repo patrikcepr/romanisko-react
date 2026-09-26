@@ -11,7 +11,7 @@ export const Hero = () => (
             className={styles.art}
             src={hero1536}
             srcSet={`${hero960} 960w, ${hero1536} 1536w`}
-            sizes="(min-width: 1024px) 48vw, 30vw"
+            sizes="(min-width: 1024px) 48vw, 100vw"
             width={1536}
             height={1024}
             alt=""

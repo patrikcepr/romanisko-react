@@ -14,7 +14,6 @@
 
 .inner {
     grid-column: content;
-    max-width: 30rem;
 
     @include up(lg) {
         grid-column: split / content-end;
@@ -35,6 +34,15 @@
     padding: 0 0 1.25rem;
     border-bottom: 1px solid var(--color-line);
     list-style: none;
+
+    // Tablet: one row; mobile and the narrow desktop aside keep the column.
+    @include up(md) {
+        @include down(lg) {
+            grid-template-columns: repeat(3, auto);
+            justify-content: start;
+            column-gap: 2.5rem;
+        }
+    }
 }
 
 .fact {
@@ -60,6 +68,11 @@
     display: block;
     color: var(--color-text-muted);
     font-size: var(--fs-small);
+}
+
+.note,
+.details {
+    max-width: 42rem;
 }
 
 .note {

@@ -1,8 +1,11 @@
 @use 'styles/mixins' as *;
 
-// Artwork sits in its own layer on the right edge; its left side dissolves into the page via a brush mask.
-// Mobile/tablet: a narrow vertical strip next to the text (as in the mockup), never under the text.
+// Desktop: artwork on the right edge, its left side dissolving into the page via a brush mask.
+// Mobile/tablet: artwork fills the whole hero behind the text as a faint, veiled background.
 .hero {
+    // How much of the artwork shows through on mobile/tablet (0 = hidden, 1 = full strength).
+    --hero-art-opacity: 0.12;
+
     position: relative;
     isolation: isolate;
     padding-block: clamp(2rem, 1.2rem + 2.4vw, 4rem) clamp(2.5rem, 1.5rem + 2.4vw, 3.25rem);
@@ -14,21 +17,20 @@
     top: 0;
     right: 0;
     bottom: 0;
-    width: 24%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: 88% 50%;
-    mask-image: url('../../../assets/redesign/masks/brush-edge-left.png');
-    mask-size: 100% 100%;
+    object-position: 50% 40%;
+    opacity: var(--hero-art-opacity);
+    mask-image: linear-gradient(to bottom, #000 65%, transparent);
     pointer-events: none;
-
-    @include up(md) {
-        width: 32%;
-    }
 
     @include up(lg) {
         width: 44%;
         object-position: 100% 50%;
+        opacity: 1;
+        mask-image: url('../../../assets/redesign/masks/brush-edge-left.png');
+        mask-size: 100% 100%;
     }
 
     @include up(xl) {
@@ -37,8 +39,6 @@
 }
 
 .text {
-    max-width: calc(76% - 0.75rem);
-
     :global(.eyebrow) {
         white-space: nowrap;
 
@@ -50,15 +50,6 @@
 
     :global(.btn) {
         white-space: nowrap;
-
-        @include down(sm) {
-            padding-inline: 1.375rem;
-            font-size: 1rem;
-        }
-    }
-
-    @include up(md) {
-        max-width: 60%;
     }
 
     @include up(lg) {
@@ -95,7 +86,7 @@
     padding: 0;
     list-style: none;
 
-    @include up(lg) {
+    @include up(md) {
         grid-template-columns: repeat(3, auto);
         justify-content: start;
         gap: 1rem clamp(2rem, 3.5vw, 3.5rem);
