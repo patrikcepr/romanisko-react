@@ -7,7 +7,11 @@ export const useReveal = () => {
         const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
         if (reduced || !("IntersectionObserver" in window)) return;
 
+        // Content already on screen (prerendered HTML) stays visible; only content further down fades in.
         const elements = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+        elements.forEach((el) => {
+            if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add("is-visible");
+        });
         root.classList.add("reveal-ready");
 
         const observer = new IntersectionObserver(

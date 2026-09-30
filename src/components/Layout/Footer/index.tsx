@@ -10,7 +10,9 @@ export const Footer = () => (
                 <GestaltMark className={styles.mark} />
                 <span>
                     {CONTACT.name} · Psychoterapie
-                    <span className={styles.copy}>&copy;&nbsp;{new Date().getFullYear()}</span>
+                    <span className={styles.copy} suppressHydrationWarning>
+                        &copy;&nbsp;{new Date().getFullYear()}
+                    </span>
                 </span>
             </p>
             <ul className={styles.links}>
