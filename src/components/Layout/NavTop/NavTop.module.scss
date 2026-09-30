@@ -1,39 +1,175 @@
-@import "styles/variables";
+@use 'styles/mixins' as *;
 
-nav {
-    background-color: rgba($primary-color, 0.5);
-    backdrop-filter: blur(8px) saturate(40%) brightness(125%);
+.header {
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    border-bottom: 1px solid transparent;
+    transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease);
 }
 
-.nav-top {
-    a {
-        color: $white;
-        font-weight: 600;
+.is-scrolled {
+    border-bottom-color: var(--color-line);
+    background: rgb(244 241 233 / 90%);
+    backdrop-filter: blur(10px);
+}
 
-        &:hover {
-            color: $secondary-color-dark;
+.bar {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    min-height: var(--header-height);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.875rem;
+    color: var(--color-heading);
+    text-decoration: none;
+}
+
+.mark {
+    width: auto;
+    height: 3.25rem;
+    color: var(--color-teal-deep);
+
+    @include down(lg) {
+        height: 2.875rem;
+    }
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+
+.brand-name {
+    font-family: var(--font-serif);
+    font-size: 1.625rem;
+    letter-spacing: -0.015em;
+
+    @include down(lg) {
+        font-size: 1.4375rem;
+    }
+}
+
+.brand-role {
+    margin-top: 0.3125rem;
+    color: #3b4f51;
+    font-size: 0.625rem;
+    font-weight: 600;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+}
+
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    margin-right: -0.5rem;
+    padding: 0;
+    border: 0;
+    border-radius: var(--radius);
+    background: none;
+    color: var(--color-heading);
+    cursor: pointer;
+
+    @include up(lg) {
+        display: none;
+    }
+}
+
+.nav {
+    display: none;
+
+    &.is-open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        padding: 0.25rem var(--gutter) 1.5rem;
+        border-bottom: 1px solid var(--color-line);
+        background: var(--color-bg);
+        box-shadow: 0 18px 30px -24px rgb(24 35 33 / 35%);
+    }
+
+    @include up(lg) {
+        display: flex;
+        align-items: center;
+        gap: clamp(1.75rem, 3vw, 3rem);
+    }
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    list-style: none;
+
+    @include down(lg) {
+        li + li {
+            border-top: 1px solid var(--color-line);
         }
     }
 
-    nav {
-        font-weight: 500;
-        font-size: 1.1em;
-        letter-spacing: 1px;
+    @include up(lg) {
+        flex-direction: row;
+        gap: clamp(1.25rem, 2.4vw, 2.25rem);
+        margin: 0;
+    }
+}
+
+.link {
+    display: block;
+    position: relative;
+    padding: 0.875rem 0;
+    color: #1d3d40;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    text-decoration: none;
+
+    &:hover,
+    &[aria-current] {
+        color: var(--color-teal);
     }
 
-    .brand_img {
-        width: 45px;
-        height: 45px;
-        padding-left: 4px;
-    }
+    @include up(lg) {
+        padding: 0.375rem 0;
+        font-size: 0.9375rem;
 
-    & .navbar-light {
-        .navbar-nav .nav-link {
-            color: $text-color;
-            &:hover,
-            &.active {
-                color: $secondary-color;
-            }
+        &::after {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 1px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s var(--ease);
+            background: var(--color-ochre);
+            content: '';
         }
+
+        &:hover::after,
+        &[aria-current]::after {
+            transform: scaleX(1);
+        }
+    }
+}
+
+.cta {
+    width: 100%;
+    background: var(--color-teal-dark);
+
+    @include up(lg) {
+        width: auto;
     }
 }

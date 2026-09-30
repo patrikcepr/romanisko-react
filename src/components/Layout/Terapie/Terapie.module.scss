@@ -1,161 +1,143 @@
-@import "styles/variables";
+@use 'styles/mixins' as *;
 
 .terapie {
-    background: linear-gradient(225deg, $grad-color-start, $grad-color-end),
-        url("../../../assets/img/romanisko_portret_cut_SM.svg") calc(100vw - 140px) 0 no-repeat;
+    background: var(--color-bg-tint);
 
-    @include media-breakpoint-up(sm) {
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end),
-            url("../../../assets/img/romanisko_portret_MD.svg") calc(100vw - 200px) 0 no-repeat;
-        padding: 10rem 1rem;
-        font-size: 1.1rem;
-    }
-
-    @include media-breakpoint-up(md) {
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end),
-            url("../../../assets/img/romanisko_portret_MD.svg") calc(100vw - 300px) 0 no-repeat;
-    }
-
-    @include media-breakpoint-up(lg) {
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end),
-            url("../../../assets/img/romanisko_portret_MD.svg") calc(100vw - 400px) 0 no-repeat;
-    }
-    @include media-breakpoint-up(xl) {
-        background: linear-gradient(225deg, $grad-color-start, $grad-color-end),
-            url("../../../assets/img/romanisko_portret_MD.svg") calc(100vw - 530px) 0 no-repeat;
-        padding: 100px 1rem;
-        min-height: 100vh;
-    }
-
-    h1 {
-        font-family: $ff;
-        font-size: 20px;
-        line-height: 1.7;
-        font-weight: 600;
-        letter-spacing: 1px;
-        color: rgba($text-color, 0.9);
-        margin-top: 6rem;
-        margin-bottom: 1.3rem;
-        animation: moveInTop 1.2s ease-out 150ms;
-
-        @media (max-width: 360px) {
-            margin-bottom: 0.5rem;
-            padding: 0.1rem 0;
-        }
-
-        @include media-breakpoint-up(md) {
-            margin-top: 10vh;
-            margin-bottom: 1.5rem;
-            font-size: 32px;
-        }
-
-        @include media-breakpoint-up(lg) {
-            margin-top: 20vh;
-            margin-bottom: 1.5rem;
-            font-size: 40px;
-        }
-    }
-
-    h2 {
-        font-size: 18px;
-        color: rgba($text-color, 0.8);
-        animation: moveInLeft 1.2s ease-out 200ms;
-        margin-bottom: 1.5rem;
-
-        @include media-breakpoint-up(lg) {
-            font-size: 32px;
-            margin-bottom: 2rem;
-        }
-    }
-
-    h3 {
-        font-size: 16px;
-        line-height: 160%;
-        color: rgba($text-color, 0.9);
-        margin-bottom: 1.5rem;
-
-        @include media-breakpoint-up(lg) {
-            font-size: 28px;
-            margin-bottom: 2rem;
-        }
+    @include down(lg) {
+        padding-bottom: 0;
     }
 }
 
-.header {
-    display: block;
+.grid {
+    display: grid;
 
-    @include media-breakpoint-up(md) {
-        display: inline-block;
+    @include up(lg) {
+        grid-template-columns: minmax(0, 1fr) minmax(16rem, 21rem);
+        column-gap: clamp(2rem, 3.5vw, 3rem);
     }
 }
 
-.list-services {
-    padding-left: 0;
+.title {
+    color: #1c4043;
+    font-weight: 600;
+
+    @include up(lg) {
+        grid-column: 1;
+    }
+}
+
+.list {
+    display: grid;
+    margin: 0;
+    padding: 0;
     list-style: none;
-    animation: moveInRight 1.2s ease-out 200ms;
 
-    &__item {
-        font-size: 1.1rem;
-        padding-bottom: 1rem;
+    @include up(md) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2.25rem 2rem;
+    }
 
-        &:hover {
-            text-shadow: 11px 5px 17px gray;
+    @include up(lg) {
+        grid-column: 1;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.875rem clamp(1.5rem, 3vw, 2.5rem);
+    }
+}
+
+.item {
+    display: grid;
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    align-items: center;
+    column-gap: 1.125rem;
+    padding-block: 1rem;
+
+    & + & {
+        border-top: 1px solid rgb(24 52 54 / 12%);
+    }
+
+    @include up(md) {
+        display: block;
+        padding: 0;
+
+        & + & {
+            border-top: 0;
         }
-
-        @include media-breakpoint-up(md) {
-            font-size: 1.3rem;
-        }
     }
 }
 
-@keyframes moveInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-100px);
-        text-shadow: 0 0 0 gray;
-    }
+.mark {
+    width: 2.75rem;
+    height: 2.75rem;
+    color: var(--color-ochre);
 
-    80% {
-        opacity: 0.9;
-        transform: translateX(10px);
-        text-shadow: -10px 0 10px gray;
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
-        text-shadow: 0 0 0 gray;
+    @include up(md) {
+        width: 3.375rem;
+        height: 3.375rem;
+        margin: 0 0 0.75rem -0.25rem;
     }
 }
 
-@keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-    }
-    80% {
-        opacity: 0.9;
-        transform: translateX(-10px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateX(0);
+.item-title {
+    margin-bottom: 0.25rem;
+    color: #1d3336;
+    font-size: 1.0625rem;
+}
+
+.item-text {
+    color: var(--color-text-muted);
+    font-size: var(--fs-small);
+    line-height: 1.5;
+}
+
+// Mobile: separate typographic block on the page background, below the tinted list.
+.statement {
+    margin: var(--section-space) calc(-1 * var(--gutter)) 0;
+    padding: var(--section-space) var(--gutter) 0;
+    background: var(--color-bg);
+
+    @include up(lg) {
+        grid-column: 2;
+        grid-row: 2;
+        align-self: center;
+        margin: 0;
+        padding: 0.25rem 0 0.25rem clamp(2rem, 3.5vw, 3rem);
+        border-left: 1px solid rgb(24 52 54 / 25%);
+        background: none;
     }
 }
 
-@keyframes moveInTop {
-    0% {
-        opacity: 0;
-        transform: translateY(-50px);
-        text-shadow: 0 0 0 gray;
+.statement-body {
+    padding: 0.25rem 0 0.5rem 1.5rem;
+    border-left: 1px solid rgb(24 52 54 / 35%);
+
+    @include up(lg) {
+        padding: 0;
+        border-left: 0;
     }
-    80% {
-        opacity: 0.8;
-        transform: translateY(10px);
-        text-shadow: 0 -10px 10px gray;
+}
+
+.statement-text {
+    margin-bottom: 1.5rem;
+    color: #1c2a2a;
+    font-family: var(--font-serif);
+    font-size: clamp(1.625rem, 1.4rem + 0.9vw, 2.125rem);
+    font-style: italic;
+    line-height: 1.28;
+
+    @include up(lg) {
+        margin-bottom: 1.75rem;
+        font-style: normal;
+        line-height: 1.32;
     }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-        text-shadow: 0 0 0 gray;
+}
+
+.stroke {
+    width: 6.5rem;
+    height: auto;
+    color: var(--color-ochre-soft);
+
+    @include up(lg) {
+        width: 7.25rem;
+        margin-left: -0.25rem;
     }
 }

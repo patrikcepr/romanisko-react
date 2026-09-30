@@ -22,6 +22,8 @@
     "paths": {
       "assets/*": ["./src/assets/*"],
       "components/*": ["./src/components/*"],
+      "data/*": ["./src/data/*"],
+      "hooks/*": ["./src/hooks/*"],
       "layout/*": ["./src/components/Layout/*"],
       "styles/*": ["./src/styles/*"],
       "UI/*": ["./src/components/UI/*"]
