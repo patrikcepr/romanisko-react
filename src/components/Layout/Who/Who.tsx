@@ -1,4 +1,5 @@
 import portraitLandscape from "assets/redesign/portrait/roman-portrait-landscape-3x2.webp";
+import portraitLandscape640 from "assets/redesign/portrait/roman-portrait-landscape-3x2-640.webp";
 import { Price } from "components/Layout/Price/Price";
 
 import styles from "./Who.module.scss";
@@ -15,6 +16,8 @@ export const Who = () => (
                     <figure className={styles.photo}>
                         <img
                             src={portraitLandscape}
+                            srcSet={`${portraitLandscape640} 640w, ${portraitLandscape} 1032w`}
+                            sizes="(min-width: 1280px) 400px, (min-width: 768px) 42vw, 100vw"
                             width={1032}
                             height={688}
                             loading="lazy"
@@ -26,6 +29,7 @@ export const Who = () => (
                             Foto &copy;&nbsp;2021{" "}
                             <a href="https://petermatas.com/" target="_blank" rel="noreferrer noopener">
                                 Peter Matas
+                                <span className="visually-hidden"> (otevře se v novém okně)</span>
                             </a>
                         </figcaption>
                     </figure>

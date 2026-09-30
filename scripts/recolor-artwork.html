@@ -1,0 +1,47 @@
+<!--
+  Recolours Roman's drawing into the hero palette (used to create
+  src/assets/redesign/artwork/roman-artwork-full-palette.webp).
+  Serve this folder over HTTP next to the source image and open:
+    recolor.html?src=<image>&w=1600          preview
+    recolor.html?src=<image>&w=1600&dump=1   also prints a WebP data URL into #out
+  Palette mapping lives in ANCHORS / DARK / PAPER below.
+-->
+<body style="margin:0;background:#f4f1e9"><canvas id="c"></canvas><pre id="out"></pre><script>
+// Hero palette anchors: [hue of source colour, target hex]
+const hex=h=>[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255);
+const ANCHORS=[
+ [0,  '#c65a26'],  // red      -> burnt orange
+ [25, '#d9822f'],  // orange   -> ochre orange
+ [50, '#e3ad55'],  // yellow   -> warm ochre
+ [95, '#8f9a4c'],  // green    -> olive
+ [170,'#2f7b7b'],  // teal     -> teal
+ [215,'#1f5c62'],  // blue     -> petrol
+ [270,'#1a454b'],  // purple   -> deep petrol
+ [325,'#d38d67'],  // pink     -> terracotta
+ [360,'#c65a26'],
+].map(([h,c])=>[h,hex(c)]);
+const DARK=hex('#173b3e'), PAPER=hex('#f1e7d2');
+const lerp=(a,b,t)=>a+(b-a)*t, mix=(a,b,t)=>a.map((v,i)=>lerp(v,b[i],t));
+const sm=(e0,e1,x)=>{const t=Math.min(1,Math.max(0,(x-e0)/(e1-e0)));return t*t*(3-2*t);};
+function anchorFor(h){for(let i=0;i<ANCHORS.length-1;i++){const [h0,c0]=ANCHORS[i],[h1,c1]=ANCHORS[i+1];if(h>=h0&&h<=h1){const t=sm(0,1,(h-h0)/(h1-h0));return mix(c0,c1,t);}}return ANCHORS[0][1];}
+const lum=c=>0.2126*c[0]+0.7152*c[1]+0.0722*c[2];
+const img=new Image();img.onload=()=>{
+ const W=+new URLSearchParams(location.search).get('w')||img.width,H=Math.round(img.height*W/img.width);
+ const cv=document.getElementById('c');cv.width=W;cv.height=H;const g=cv.getContext('2d');g.drawImage(img,0,0,W,H);
+ const d=g.getImageData(0,0,W,H),p=d.data;
+ for(let i=0;i<p.length;i+=4){
+  const r=p[i]/255,gg=p[i+1]/255,b=p[i+2]/255,mx=Math.max(r,gg,b),mn=Math.min(r,gg,b),ch=mx-mn,L=lum([r,gg,b]);
+  let h=0;if(ch>1e-4){if(mx===r)h=60*(((gg-b)/ch)%6);else if(mx===gg)h=60*((b-r)/ch+2);else h=60*((r-gg)/ch+4);if(h<0)h+=360;}
+  // neutrals (paper, pencil/ink lines): duotone between petrol ink and cream paper
+  const neutral=mix(DARK,PAPER,sm(0.12,0.86,L));
+  // colours: palette colour, keeping the painted light/dark texture
+  const a=anchorFor(h),aL=lum(a);const k=Math.pow(Math.max(L,0.02)/Math.max(aL,0.02),0.55);
+  let col=a.map(v=>Math.min(1,v*k));
+  const lift=sm(0.55,0.8,L)*(h>150&&h<260?1:0.35);const w=sm(0.1+0.3*lift,0.28+0.32*lift,ch);
+  const o=mix(neutral,col,w);
+  p[i]=o[0]*255;p[i+1]=o[1]*255;p[i+2]=o[2]*255;
+ }
+ g.putImageData(d,0,0);
+ if(new URLSearchParams(location.search).get('dump'))document.getElementById('out').textContent=cv.toDataURL('image/webp',0.86);
+};img.src=new URLSearchParams(location.search).get('src')||'art.webp';
+</script></body>

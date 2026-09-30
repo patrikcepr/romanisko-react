@@ -24,7 +24,7 @@ export const Hero = () => (
                 <p className="eyebrow">Psychoterapie · Praha 7 / online</p>
                 <h1 id="hero-title" className={styles.title}>
                     Psychoterapie <br />
-                    jako prostor pro&nbsp;změnu.
+                    jako prostor pro&nbsp;změnu
                 </h1>
                 <p className={styles.lead}>
                     Stres, vztahy, úzkost, náročné životní situace <br className={styles.br} />

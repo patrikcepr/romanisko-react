@@ -74,7 +74,7 @@
 
 .credit {
     margin-top: 0.5rem;
-    color: rgb(244 241 233 / 70%);
+    color: var(--color-on-dark-muted);
     font-size: var(--fs-xs);
 
     a {
