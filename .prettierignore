@@ -1,1 +1,4 @@
-src/api/**/*
+dist
+dist-ssr
+build
+package-lock.json

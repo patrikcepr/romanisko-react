@@ -24,12 +24,10 @@
       "components/*": ["./src/components/*"],
       "data/*": ["./src/data/*"],
       "hooks/*": ["./src/hooks/*"],
-      "layout/*": ["./src/components/Layout/*"],
-      "styles/*": ["./src/styles/*"],
-      "UI/*": ["./src/components/UI/*"]
+      "styles/*": ["./src/styles/*"]
     }
   },
   "include": [
-    "src", "index.d.ts", "vite.config.mts"
+    "src", "vite.config.mts"
   ]
 }

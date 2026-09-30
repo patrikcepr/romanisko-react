@@ -15,11 +15,6 @@
   "settings": {
       "react": {
           "version": "detect"
-      },
-      "import/resolver": {
-          "node": {
-              "extensions": [".ts", ".tsx"]
-          }
       }
   },
   "plugins": ["@typescript-eslint", "simple-import-sort", "prettier"],
@@ -28,7 +23,8 @@
       "prettier",
       "plugin:@typescript-eslint/recommended",
       "plugin:prettier/recommended",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "rules": {
