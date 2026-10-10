@@ -20,6 +20,7 @@ jobs:
             - run: npm ci
             - run: npm run lint
             - run: npm run ts-lint
+            - run: npm run stylelint
             - run: npm run build
 
             - uses: actions/upload-artifact@v4

@@ -7,13 +7,14 @@ The HTML is prerendered at build time, so the full content is available without 
 
 ## Scripts
 
-| Command           | What it does                                                   |
-| ----------------- | -------------------------------------------------------------- |
-| `npm start`       | Dev server with hot reload (http://localhost:5173)             |
-| `npm run build`   | Type-check, client build, SSR build and prerender into `dist/` |
-| `npm run preview` | Serve the production build from `dist/` locally                |
-| `npm run lint`    | ESLint (+ Prettier) for `src`                                  |
-| `npm run ts-lint` | TypeScript type check                                          |
+| Command             | What it does                                                   |
+| ------------------- | -------------------------------------------------------------- |
+| `npm start`         | Dev server with hot reload (http://localhost:5173)             |
+| `npm run build`     | Type-check, client build, SSR build and prerender into `dist/` |
+| `npm run preview`   | Serve the production build from `dist/` locally                |
+| `npm run lint`      | ESLint (+ Prettier) for `src`                                  |
+| `npm run ts-lint`   | TypeScript type check                                          |
+| `npm run stylelint` | Stylelint for `src/**/*.scss`                                  |
 
 Git hooks (husky, installed by `npm install`) run lint-staged on commit – ESLint + Prettier for TS, Stylelint for SCSS,
 Prettier for MD/JSON – and check that commit messages follow Conventional Commits (commitlint).

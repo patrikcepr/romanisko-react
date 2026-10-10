@@ -25,6 +25,8 @@ All notable changes to this project will be documented in this file.
 
 -   Git hooks were never committed, so lint-staged and commitlint did not run; added `pre-commit` and `commit-msg`,
     husky upgraded to v9.
+-   Security alerts in dev tooling (`source-map-js`, `postcss-selector-parser`): stylelint 14 → 17 with its configs,
+    typescript-eslint 5 → 8; Stylelint now runs in CI (`npm run stylelint`).
 
 ## 2026-09 – Redesign
 
