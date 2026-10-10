@@ -15,7 +15,8 @@ The HTML is prerendered at build time, so the full content is available without 
 | `npm run lint`    | ESLint (+ Prettier) for `src`                                  |
 | `npm run ts-lint` | TypeScript type check                                          |
 
-Styles are checked by Stylelint on commit (lint-staged + husky); commit messages follow Conventional Commits (commitlint).
+Git hooks (husky, installed by `npm install`) run lint-staged on commit – ESLint + Prettier for TS, Stylelint for SCSS,
+Prettier for MD/JSON – and check that commit messages follow Conventional Commits (commitlint).
 
 ## Project structure
 
