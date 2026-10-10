@@ -9,7 +9,7 @@ export const Footer = () => (
             <p className={styles.brand}>
                 <GestaltMark className={styles.mark} />
                 <span>
-                    {CONTACT.name} · Psychoterapie
+                    {CONTACT.name} · Gestalt terapeut
                     <span className={styles.copy} suppressHydrationWarning>
                         &copy;&nbsp;{new Date().getFullYear()}
                     </span>
