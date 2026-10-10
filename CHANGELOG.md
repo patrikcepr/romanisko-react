@@ -20,6 +20,11 @@ All notable changes to this project will be documented in this file.
 -   Create React App leftovers: root `index.d.ts`, unused path aliases (`layout`, `UI`) and unused dev dependencies
     (`normalize.css`, `autoprefixer`, `postcss`, `postcss-html`, `stylelint-config-html`, `stylelint-config-prettier*`).
 
+### Fixed
+
+-   Git hooks were never committed, so lint-staged and commitlint did not run; added `pre-commit` and `commit-msg`,
+    husky upgraded to v9.
+
 ## 2026-09 – Redesign
 
 ### Added

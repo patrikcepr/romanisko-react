@@ -24,8 +24,9 @@ React 19 + TypeScript + Vite, SCSS modules, HTML prerendered at build time. No b
 
 Styles: `npx stylelint --customSyntax postcss-scss "src/**/*.scss"` (not part of `npm run lint`).
 
-Run lint, ts-lint, stylelint and build before every commit. Git hooks are **not** installed (`.husky/` has no hooks), so nothing
-runs automatically on commit; CI (`.github/workflows/ci.yml`) runs lint, ts-lint and build on every push and PR.
+Run lint, ts-lint, stylelint and build before every commit. Git hooks (husky, installed by `npm install`) run lint-staged on
+commit (ESLint + Prettier for TS, Stylelint for SCSS, Prettier for MD/JSON) and commitlint on the message – never bypass them
+with `--no-verify`. CI (`.github/workflows/ci.yml`) runs lint, ts-lint and build on every push and PR.
 
 ## Structure
 

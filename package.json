@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "postinstall": "husky install",
+        "prepare": "husky",
         "start": "vite",
         "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
         "preview": "vite preview",
@@ -31,7 +31,7 @@
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^4.6.2",
         "eslint-plugin-simple-import-sort": "^7.0.0",
-        "husky": "^8.0.3",
+        "husky": "^9.1.7",
         "lint-staged": "^17.5.1",
         "prettier": "^2.8.8",
         "stylelint": "^14.16.1",
