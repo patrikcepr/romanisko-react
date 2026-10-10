@@ -14,19 +14,18 @@ React 19 + TypeScript + Vite, SCSS modules, HTML prerendered at build time. No b
 
 ## Commands
 
-| Command           | Purpose                                                               |
-| ----------------- | --------------------------------------------------------------------- |
-| `npm start`       | Dev server, http://localhost:5173                                     |
-| `npm run lint`    | ESLint + Prettier rules for `src/**/*.{ts,tsx}`                       |
-| `npm run ts-lint` | Type check                                                            |
-| `npm run build`   | Type check, client build, SSR build, prerender into `dist/index.html` |
-| `npm run preview` | Serve `dist/` (use after `build` to check the prerendered page)       |
-
-Styles: `npx stylelint --customSyntax postcss-scss "src/**/*.scss"` (not part of `npm run lint`).
+| Command             | Purpose                                                               |
+| ------------------- | --------------------------------------------------------------------- |
+| `npm start`         | Dev server, http://localhost:5173                                     |
+| `npm run lint`      | ESLint + Prettier rules for `src/**/*.{ts,tsx}`                       |
+| `npm run ts-lint`   | Type check                                                            |
+| `npm run stylelint` | Stylelint for `src/**/*.scss`                                         |
+| `npm run build`     | Type check, client build, SSR build, prerender into `dist/index.html` |
+| `npm run preview`   | Serve `dist/` (use after `build` to check the prerendered page)       |
 
 Run lint, ts-lint, stylelint and build before every commit. Git hooks (husky, installed by `npm install`) run lint-staged on
 commit (ESLint + Prettier for TS, Stylelint for SCSS, Prettier for MD/JSON) and commitlint on the message – never bypass them
-with `--no-verify`. CI (`.github/workflows/ci.yml`) runs lint, ts-lint and build on every push and PR.
+with `--no-verify`. CI (`.github/workflows/ci.yml`) runs lint, ts-lint, stylelint and build on every push and PR.
 
 ## Structure
 
