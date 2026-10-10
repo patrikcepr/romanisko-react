@@ -23,7 +23,7 @@ export const Hero = () => (
             <div className={styles.text} data-reveal>
                 <p className="eyebrow">Psychoterapie · Praha 7 / online</p>
                 <h1 id="hero-title" className={styles.title}>
-                    Psychoterapie <br />
+                    Terapie <br />
                     jako prostor pro&nbsp;změnu
                 </h1>
                 <p className={styles.lead}>

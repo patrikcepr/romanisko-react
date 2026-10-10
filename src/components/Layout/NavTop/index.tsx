@@ -71,7 +71,7 @@ const NavTop = () => {
                     <GestaltMark framed className={styles.mark} />
                     <span className={styles["brand-text"]}>
                         <span className={styles["brand-name"]}>Roman Arpáš</span>
-                        <span className={styles["brand-role"]}>Psychoterapie</span>
+                        <span className={styles["brand-role"]}>Gestalt terapeut</span>
                     </span>
                 </a>
 
