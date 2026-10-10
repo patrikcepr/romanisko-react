@@ -2,6 +2,7 @@ import artworkOriginal from "assets/redesign/artwork/roman-artwork-full.webp";
 import artworkOriginal900 from "assets/redesign/artwork/roman-artwork-full-900.webp";
 import artworkPalette from "assets/redesign/artwork/roman-artwork-full-palette.webp";
 import artworkPalette900 from "assets/redesign/artwork/roman-artwork-full-palette-900.webp";
+import cs from "locales/cs.json";
 
 import styles from "./What.module.scss";
 
@@ -10,29 +11,16 @@ const ARTWORK_VARIANT: "palette" | "original" = "palette";
 const [artwork900, artworkFull] =
     ARTWORK_VARIANT === "palette" ? [artworkPalette900, artworkPalette] : [artworkOriginal900, artworkOriginal];
 
-const ARTWORK_ALT =
-    "Kresba Romana Arpáše: dlaň poskládaná z barevných geometrických tvarů " + "na pozadí z černých linií, vln a trojúhelníků.";
-
 export const What = () => (
     <section id="what" className={styles.what} aria-labelledby="what-title">
         <div className={styles.text} data-reveal>
             <h2 id="what-title" className={`section-title ${styles.title}`}>
-                Jak pracuji
+                {cs.what.title}
             </h2>
-            <p>
-                Jako terapeut jsem aktivně přítomen – vidím, slyším a prožívám to, co prožíváte TADY a TEĎ. Při naslouchání se
-                snažím porozumět, jak se organizujete ve svém sociálním okolí. Společně hledáme a&nbsp;nacházíme to, co pro sebe
-                potřebujete. A hlavně – KDO vlastně jste.
-            </p>
-            <p>
-                Všechno, co sami v sobě prožíváte, je projevem vaší autenticity a někdy i fantazie. Na terapii pak můžeme
-                legalizovat a vnímat vaši originalitu v jejím přirozeném TVARU (německy GESTALT).
-            </p>
-            <p>
-                Úzkost a deprese využívají ke své realizaci tělo. Proto na terapii věnuji pozornost i propojení emocí
-                s&nbsp;tělesným prožíváním.
-            </p>
-            <p className={styles.credit}>Kresba: Roman Arpáš</p>
+            {cs.what.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+            ))}
+            <p className={styles.credit}>{cs.what.credit}</p>
         </div>
 
         <figure className={styles.figure}>
@@ -45,7 +33,7 @@ export const What = () => (
                 loading="lazy"
                 decoding="async"
                 className={styles.image}
-                alt={ARTWORK_ALT}
+                alt={cs.what.artworkAlt}
             />
         </figure>
     </section>

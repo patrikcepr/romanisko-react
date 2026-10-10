@@ -2,6 +2,6 @@
     "*.css": "npx stylelint --fix",
     "*.{sass,scss}": "npx stylelint --customSyntax postcss-scss --fix",
     "*.{ts,tsx}": ["npx eslint --fix", "npx prettier --write"],
-    "*.{js}": ["npx eslint --fix", "npx prettier --write"],
+    "*.js": ["npx eslint --fix", "npx prettier --write"],
     "*.{md,json}": "npx prettier --write"
 }

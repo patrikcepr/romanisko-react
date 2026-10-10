@@ -3,13 +3,14 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "postinstall": "husky install",
+        "prepare": "husky",
         "start": "vite",
         "build": "tsc -b && vite build && vite build --ssr src/entry-server.tsx --outDir dist-ssr && node scripts/prerender.mjs",
         "preview": "vite preview",
         "ts-lint": "tsc --noEmit -p tsconfig.json",
         "lint": "eslint \"{src,apps,libs,test}/**/*.{ts,tsx}\"",
-        "lint-fix": "eslint --fix --format=stylish \"{src,apps,libs,test}/**/*.{ts,tsx}\""
+        "lint-fix": "eslint --fix --format=stylish \"{src,apps,libs,test}/**/*.{ts,tsx}\"",
+        "stylelint": "stylelint --customSyntax postcss-scss \"src/**/*.scss\""
     },
     "dependencies": {
         "react": "^19.3.0",
@@ -22,8 +23,8 @@
         "@types/node": "^26.6.2",
         "@types/react": "^19.3.0",
         "@types/react-dom": "^19.3.0",
-        "@typescript-eslint/eslint-plugin": "^5.62.0",
-        "@typescript-eslint/parser": "^5.62.0",
+        "@typescript-eslint/eslint-plugin": "^8.71.1",
+        "@typescript-eslint/parser": "^8.71.1",
         "@vitejs/plugin-react": "^6.1.1",
         "eslint": "^8.57.1",
         "eslint-config-prettier": "^8.10.2",
@@ -31,13 +32,12 @@
         "eslint-plugin-react": "^7.37.5",
         "eslint-plugin-react-hooks": "^4.6.2",
         "eslint-plugin-simple-import-sort": "^7.0.0",
-        "husky": "^8.0.3",
+        "husky": "^9.1.7",
         "lint-staged": "^17.5.1",
         "prettier": "^2.8.8",
-        "stylelint": "^14.16.1",
-        "stylelint-config-sass-guidelines": "^9.0.1",
-        "stylelint-config-standard": "^26.0.0",
-        "stylelint-config-standard-scss": "^5.0.0",
+        "stylelint": "^17.16.0",
+        "stylelint-config-sass-guidelines": "^13.0.0",
+        "stylelint-config-standard-scss": "^17.0.0",
         "typescript": "^5.9.3",
         "vite": "^8.3.0"
     }

@@ -1,0 +1,112 @@
+{
+    "common": {
+        "role": "Gestalt terapeut",
+        "newWindow": "(otevře se v novém okně)"
+    },
+    "app": {
+        "skipLink": "Přeskočit na obsah"
+    },
+    "nav": {
+        "label": "Hlavní navigace",
+        "links": {
+            "terapie": "Terapie",
+            "what": "Gestalt",
+            "who": "O mně",
+            "price": "Ceník",
+            "contact": "Kontakt"
+        },
+        "cta": "Domluvit setkání",
+        "openMenu": "Otevřít menu",
+        "closeMenu": "Zavřít menu"
+    },
+    "hero": {
+        "eyebrow": "Psychoterapie · Praha 7 / online",
+        "title": "Terapie <br/>jako prostor pro změnu",
+        "lead": "Stres, vztahy, úzkost, náročné životní situace <br/>nebo jen pocit, že něco není tak, jak byste chtěli. <br/>Společně můžeme hledat, co potřebujete právě Vy.",
+        "cta": "Domluvit první setkání"
+    },
+    "facts": {
+        "duration": { "value": "55 minut", "label": "délka setkání" },
+        "place": { "value": "Praha 7 / online", "label": "osobně nebo videohovor" },
+        "price": { "value": "1 000 Kč", "label": "jedno sezení" }
+    },
+    "terapie": {
+        "title": "S čím za mnou lidé nejčastěji přicházejí",
+        "topics": [
+            {
+                "id": "stres",
+                "title": "Stres a náročné situace",
+                "text": "značný stres, problémy ve vztazích, v práci nebo jiných oblastech života"
+            },
+            {
+                "id": "deprese",
+                "title": "Deprese, úzkost",
+                "text": "duševní problémy jako deprese, úzkost, pocity méněcennosti a viny"
+            },
+            {
+                "id": "identita",
+                "title": "Hledání vlastní identity",
+                "text": "nejasný pocit vlastní identity"
+            },
+            {
+                "id": "sebevrazda",
+                "title": "Sebevražedné myšlenky",
+                "text": "myšlenky na sebevraždu, sebevražedné chování"
+            },
+            {
+                "id": "potencial",
+                "title": "Využití vlastního potenciálu",
+                "text": "objevování a využití vlastního potenciálu"
+            },
+            {
+                "id": "smysl",
+                "title": "Smysl, nadhled, humor",
+                "text": "nalézání smyslu bytí, moudrosti, nadhledu i humoru"
+            }
+        ],
+        "statement": "Cílem našich sezení je převzít plnou odpovědnost za svůj život a hlásit se ke své důstojnosti."
+    },
+    "what": {
+        "title": "Jak pracuji",
+        "paragraphs": [
+            "Jako terapeut jsem aktivně přítomen – vidím, slyším a prožívám to, co prožíváte TADY a TEĎ. Při naslouchání se snažím porozumět, jak se organizujete ve svém sociálním okolí. Společně hledáme a nacházíme to, co pro sebe potřebujete. A hlavně – KDO vlastně jste.",
+            "Všechno, co sami v sobě prožíváte, je projevem vaší autenticity a někdy i fantazie. Na terapii pak můžeme legalizovat a vnímat vaši originalitu v jejím přirozeném TVARU (německy GESTALT).",
+            "Úzkost a deprese využívají ke své realizaci tělo. Proto na terapii věnuji pozornost i propojení emocí s tělesným prožíváním."
+        ],
+        "credit": "Kresba: Roman Arpáš",
+        "artworkAlt": "Kresba Romana Arpáše: dlaň poskládaná z barevných geometrických tvarů na pozadí z černých linií, vln a trojúhelníků."
+    },
+    "who": {
+        "title": "Moje cesta k psychoterapii",
+        "portraitAlt": "Roman Arpáš v modré košili, v pozadí pole a kopce ve večerním světle",
+        "photoCredit": "Foto © 2021 <link>Peter Matas</link>",
+        "paragraphs": [
+            "Vystudoval jsem psychopedii. Po vysoké škole jsem 8 let pracoval v ústavu s mentálně a fyzicky hendikepovanými. Následně jsem 16 let strávil v korporátu na HR, jako kouč a trenér v rozvoji komunikace. Zde jsem se potkával s tématy, která úzce souvisí s komerčním prostředím, jako např. syndrom vyhoření, stres, velká orientace na výkon.",
+            "Pracovní zkušenosti ze dvou tak diametrálně odlišných světů, jejich propojení, zájem o vztahy a lidské příběhy mě přivedly k rozhodnutí věnovat se psychoterapii. V letech 2016–2021 jsem absolvoval psychoterapeutický výcvik v gestalt modalitě.",
+            "Kromě poznávání lidských osudů mám rád třeba film Světáci, slovenský folklór, život čmeláků, komiksy, čistou vodu, svět Harryho Pottera a bramboráky."
+        ]
+    },
+    "price": {
+        "title": "Praktické informace",
+        "note": "V případě zájmu mě můžete kontaktovat <phone>telefonicky</phone>, <email>e-mailem</email> nebo SMS. Pokud nezvedám telefon, zanechte mi, prosím, zprávu.",
+        "show": "Zobrazit ceník",
+        "hide": "Skrýt ceník",
+        "orderTitle": "Objednání",
+        "order": "Na první sezení je potřeba se objednat — telefonicky, SMS či e-mailem. Ozvu se, jakmile to bude možné.",
+        "online": "V současné době kromě klasických sezení poskytuji konzultace i terapie online.",
+        "onlineWithSkype": "V současné době kromě klasických sezení poskytuji konzultace i terapie online přes Skype <skype/>.",
+        "paymentTitle": "Cena a platba",
+        "payment": "Jedno setkání trvá 55 minut. Terapie není hrazena zdravotní pojišťovnou. Cena jednoho sezení je 1 000 Kč. Platba je možná převodem na účet nebo v hotovosti.",
+        "cancelTitle": "Zrušení termínu",
+        "cancel": "Pokud se v domluveném termínu nemůžete dostavit, je potřeba mě informovat nejpozději den předem, a to nejlépe telefonicky, případně SMS nebo e-mailem."
+    },
+    "contact": {
+        "title": "Kontakt",
+        "lead": "Ozvěte se telefonicky, SMS nebo e-mailem. Pokud nezvedám telefon, zanechte mi, prosím, zprávu.",
+        "openInMaps": "Otevřít v mapách",
+        "phoneLabel": "Telefon / SMS",
+        "emailLabel": "E-mail",
+        "skypeLabel": "Skype",
+        "mapTitle": "Mapa"
+    }
+}

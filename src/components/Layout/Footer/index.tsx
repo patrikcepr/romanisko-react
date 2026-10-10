@@ -1,5 +1,6 @@
 import { GestaltMark } from "components/UI/GestaltMark";
 import { CONTACT } from "data/site";
+import cs from "locales/cs.json";
 
 import styles from "./Footer.module.scss";
 
@@ -9,7 +10,7 @@ export const Footer = () => (
             <p className={styles.brand}>
                 <GestaltMark className={styles.mark} />
                 <span>
-                    {CONTACT.name} · Gestalt terapeut
+                    {CONTACT.name} · {cs.common.role}
                     <span className={styles.copy} suppressHydrationWarning>
                         &copy;&nbsp;{new Date().getFullYear()}
                     </span>

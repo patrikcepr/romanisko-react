@@ -1,16 +1,12 @@
 import { GestaltMark } from "components/UI/GestaltMark";
 import { Icon } from "components/UI/Icon";
+import { CONTACT } from "data/site";
+import cs from "locales/cs.json";
 import { useEffect, useRef, useState } from "react";
 
 import styles from "./NavTop.module.scss";
 
-const LINKS = [
-    { label: "Terapie", id: "terapie" },
-    { label: "Gestalt", id: "what" },
-    { label: "O mně", id: "who" },
-    { label: "Ceník", id: "price" },
-    { label: "Kontakt", id: "contact" },
-];
+const LINKS = (Object.keys(cs.nav.links) as (keyof typeof cs.nav.links)[]).map((id) => ({ id, label: cs.nav.links[id] }));
 
 // Keep in sync with the `lg` breakpoint in styles/_mixins.scss.
 const DESKTOP_QUERY = "(min-width: 1024px)";
@@ -70,8 +66,8 @@ const NavTop = () => {
                 <a href="#top" className={styles.brand} onClick={close}>
                     <GestaltMark framed className={styles.mark} />
                     <span className={styles["brand-text"]}>
-                        <span className={styles["brand-name"]}>Roman Arpáš</span>
-                        <span className={styles["brand-role"]}>Gestalt terapeut</span>
+                        <span className={styles["brand-name"]}>{CONTACT.name}</span>
+                        <span className={styles["brand-role"]}>{cs.common.role}</span>
                     </span>
                 </a>
 
@@ -84,10 +80,10 @@ const NavTop = () => {
                     onClick={() => setOpen((o) => !o)}
                 >
                     <Icon name={open ? "close" : "menu"} size={26} />
-                    <span className="visually-hidden">{open ? "Zavřít menu" : "Otevřít menu"}</span>
+                    <span className="visually-hidden">{open ? cs.nav.closeMenu : cs.nav.openMenu}</span>
                 </button>
 
-                <nav id="main-nav" aria-label="Hlavní navigace" className={`${styles.nav} ${open ? styles["is-open"] : ""}`}>
+                <nav id="main-nav" aria-label={cs.nav.label} className={`${styles.nav} ${open ? styles["is-open"] : ""}`}>
                     <ul className={styles.links}>
                         {LINKS.map((link) => (
                             <li key={link.id}>
@@ -103,7 +99,7 @@ const NavTop = () => {
                         ))}
                     </ul>
                     <a href="#contact" className={`btn btn-primary btn-small ${styles.cta}`} onClick={close}>
-                        Domluvit setkání
+                        {cs.nav.cta}
                     </a>
                 </nav>
             </div>

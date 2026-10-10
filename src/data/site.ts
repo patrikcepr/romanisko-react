@@ -17,8 +17,9 @@ export const CONTACT = {
     skype: null as { label: string; href: string } | null,
 };
 
-export const FACTS: { icon: IconName; value: string; label: string }[] = [
-    { icon: "clock", value: "55 minut", label: "délka setkání" },
-    { icon: "pin", value: "Praha 7 / online", label: "osobně nebo videohovor" },
-    { icon: "coins", value: "1 000 Kč", label: "jedno sezení" },
+// Wording lives in locales/cs.json under `facts.<key>`.
+export const FACTS: { icon: IconName; key: "duration" | "place" | "price" }[] = [
+    { icon: "clock", key: "duration" },
+    { icon: "pin", key: "place" },
+    { icon: "coins", key: "price" },
 ];
