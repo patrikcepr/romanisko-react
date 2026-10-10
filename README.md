@@ -26,7 +26,8 @@ src/
   entry-server.tsx        render-to-string entry used by the prerender step
   components/Layout/      page sections (NavTop, Hero, Terapie, What, Who + Price, Contact, Footer)
   components/UI/          Icon, GestaltMark
-  data/site.ts            contact details and practical facts (single source of truth)
+  data/site.ts            contact details, links and fact icons (single source of truth for data)
+  locales/cs.json         all user-facing texts; locales/rich.tsx renders inline tags in them
   hooks/useReveal.ts      subtle fade-in on scroll (respects prefers-reduced-motion)
   styles/                 global.scss (tokens, typography, buttons), _mixins.scss (breakpoints)
   assets/redesign/        images: hero, artwork, portrait, logo, brush masks, originals
@@ -39,6 +40,9 @@ scripts/
 
 ## Content notes
 
+-   Texts are edited in `src/locales/cs.json`. Links and line breaks inside a sentence are written as tags
+    (`<phone>telefonicky</phone>`, `<br/>`) that the component turns into elements; an unknown tag fails the build.
+    Write non-breaking spaces (after one-letter prepositions, inside `1 000 Kč`) as ` `.
 -   Contact data and prices live in `src/data/site.ts`. The JSON-LD block in `index.html` repeats them for search engines – keep both in sync.
 -   Skype is hidden with `skype: null` in `src/data/site.ts`.
 -   The "Jak pracuji" drawing can be switched between the recoloured and the original version via `ARTWORK_VARIANT` in `src/components/Layout/What/What.tsx`.

@@ -43,10 +43,13 @@ runs automatically on commit; CI (`.github/workflows/ci.yml`) runs lint, ts-lint
     framework, no Bootstrap.
 -   Code must be SSR-safe: no `window`/`document` at module scope or during render; browser-only work goes in effects.
     Prerendered and hydrated markup must match (only `© year` uses `suppressHydrationWarning`).
--   Texts: user-facing Czech strings currently live inline in the section components and in `src/data/site.ts`. A move to a single
-    catalogue (`src/locales/cs.json`) is planned – update this section when it lands.
+-   Texts: every user-facing string (including `alt`, `title`, `aria-label` and visually hidden texts) lives in
+    `src/locales/cs.json`; components read it as `cs.section.key`. Inline links/line breaks use tags rendered by
+    `rich()` from `src/locales/rich.tsx` (`"… <phone>telefonicky</phone> …"`), non-breaking spaces are written as ` `.
+    ESLint `react/jsx-no-literals` rejects text written directly in JSX (attributes are not checked – review them). Remove a key
+    together with its last use. `src/data/site.ts` keeps only data (name, contacts, links, fact icons).
 -   Content kept in several places – change all of them together:
-    -   Name, role, claim, contact, price: components / `src/data/site.ts`, meta tags and JSON-LD in `index.html`,
+    -   Name, role, claim, contact, price: `src/locales/cs.json` / `src/data/site.ts`, meta tags and JSON-LD in `index.html`,
         `public/manifest.json`, and `public/og-image.jpg` (1200×630, **text is baked into the image** – regenerate it in the same
         layout when the name, role or hero claim changes).
     -   `public/sitemap.xml` `lastmod` when content changes noticeably.

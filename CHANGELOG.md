@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
 
 -   Texts: "Gestalt terapeut" under the name in the header and footer, hero title "Terapie jako prostor pro změnu"
     (fewer repetitions of "psychoterapie"); meta tags, JSON-LD, manifest and OG image updated to mention both.
+-   All user-facing texts moved from the components to `src/locales/cs.json`; ESLint rejects new texts written directly in JSX.
 -   README rewritten for the Vite setup; ESLint now also checks React hooks rules.
 
 ### Removed
