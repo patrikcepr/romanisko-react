@@ -55,6 +55,8 @@
       ],
       "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
       "react/jsx-props-no-spreading": "off",
+      // UI texts belong in src/locales/cs.json
+      "react/jsx-no-literals": ["error", { "noStrings": false, "allowedStrings": ["·", "©"] }],
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error"
   }

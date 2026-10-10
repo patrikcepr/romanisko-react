@@ -1,6 +1,8 @@
 import portraitLandscape from "assets/redesign/portrait/roman-portrait-landscape-3x2.webp";
 import portraitLandscape640 from "assets/redesign/portrait/roman-portrait-landscape-3x2-640.webp";
 import { Price } from "components/Layout/Price/Price";
+import cs from "locales/cs.json";
+import { rich } from "locales/rich";
 
 import styles from "./Who.module.scss";
 
@@ -10,7 +12,7 @@ export const Who = () => (
         <section id="who" className={styles.who} aria-labelledby="who-title">
             <div className={styles.inner}>
                 <h2 id="who-title" className={`section-title ${styles.title}`} data-reveal>
-                    Moje cesta k psychoterapii
+                    {cs.who.title}
                 </h2>
                 <div className={styles.content} data-reveal>
                     <figure className={styles.photo}>
@@ -23,33 +25,24 @@ export const Who = () => (
                             loading="lazy"
                             decoding="async"
                             className={styles.image}
-                            alt="Roman Arpáš v modré košili, v pozadí pole a kopce ve večerním světle"
+                            alt={cs.who.portraitAlt}
                         />
                         <figcaption className={styles.credit}>
-                            Foto &copy;&nbsp;2021{" "}
-                            <a href="https://petermatas.com/" target="_blank" rel="noreferrer noopener">
-                                Peter Matas
-                                <span className="visually-hidden"> (otevře se v novém okně)</span>
-                            </a>
+                            {rich(cs.who.photoCredit, {
+                                link: (name) => (
+                                    <a href="https://petermatas.com/" target="_blank" rel="noreferrer noopener">
+                                        {name}
+                                        <span className="visually-hidden"> {cs.common.newWindow}</span>
+                                    </a>
+                                ),
+                            })}
                         </figcaption>
                     </figure>
 
                     <div className={styles.story}>
-                        <p>
-                            Vystudoval jsem psychopedii. Po vysoké škole jsem 8 let pracoval v ústavu s mentálně a&nbsp;fyzicky
-                            hendikepovanými. Následně jsem 16 let strávil v korporátu na HR, jako kouč a&nbsp;trenér v rozvoji
-                            komunikace. Zde jsem se potkával s tématy, která úzce souvisí s komerčním prostředím, jako např.
-                            syndrom vyhoření, stres, velká orientace na výkon.
-                        </p>
-                        <p>
-                            Pracovní zkušenosti ze dvou tak diametrálně odlišných světů, jejich propojení, zájem o vztahy
-                            a&nbsp;lidské příběhy mě přivedly k rozhodnutí věnovat se psychoterapii. V letech 2016–2021 jsem
-                            absolvoval psychoterapeutický výcvik v gestalt modalitě.
-                        </p>
-                        <p>
-                            Kromě poznávání lidských osudů mám rád třeba film Světáci, slovenský folklór, život čmeláků, komiksy,
-                            čistou vodu, svět Harryho Pottera a bramboráky.
-                        </p>
+                        {cs.who.paragraphs.map((paragraph) => (
+                            <p key={paragraph}>{paragraph}</p>
+                        ))}
                     </div>
                 </div>
             </div>

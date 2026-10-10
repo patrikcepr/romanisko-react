@@ -1,5 +1,7 @@
 import { Icon } from "components/UI/Icon";
 import { CONTACT, FACTS } from "data/site";
+import cs from "locales/cs.json";
+import { rich } from "locales/rich";
 import { useEffect, useState } from "react";
 
 import styles from "./Price.module.scss";
@@ -9,6 +11,7 @@ const ASIDE_FACTS = [FACTS[0], FACTS[2], FACTS[1]];
 
 export const Price = () => {
     const [open, setOpen] = useState(false);
+    const { skype } = CONTACT;
 
     // Opening the page (or navigating) to #price shows the full price list straight away.
     useEffect(() => {
@@ -22,24 +25,26 @@ export const Price = () => {
         <aside id="price" className={styles.price} aria-labelledby="price-title">
             <div className={styles.inner} data-reveal>
                 <h2 id="price-title" className={styles.title}>
-                    Praktické informace
+                    {cs.price.title}
                 </h2>
 
                 <ul className={styles.facts}>
                     {ASIDE_FACTS.map((fact) => (
-                        <li key={fact.value} className={styles.fact}>
+                        <li key={fact.key} className={styles.fact}>
                             <Icon name={fact.icon} size={30} strokeWidth={1.3} className={styles["fact-icon"]} />
                             <span>
-                                <strong className={styles["fact-value"]}>{fact.value}</strong>
-                                <span className={styles["fact-label"]}>{fact.label}</span>
+                                <strong className={styles["fact-value"]}>{cs.facts[fact.key].value}</strong>
+                                <span className={styles["fact-label"]}>{cs.facts[fact.key].label}</span>
                             </span>
                         </li>
                     ))}
                 </ul>
 
                 <p className={styles.note}>
-                    V případě zájmu mě můžete kontaktovat <a href={CONTACT.phoneHref}>telefonicky</a>,{" "}
-                    <a href={CONTACT.emailHref}>e-mailem</a> nebo SMS. Pokud nezvedám telefon, zanechte mi, prosím, zprávu.
+                    {rich(cs.price.note, {
+                        phone: (text) => <a href={CONTACT.phoneHref}>{text}</a>,
+                        email: (text) => <a href={CONTACT.emailHref}>{text}</a>,
+                    })}
                 </p>
 
                 <button
@@ -49,35 +54,24 @@ export const Price = () => {
                     aria-controls="price-details"
                     onClick={() => setOpen((o) => !o)}
                 >
-                    {open ? "Skrýt ceník" : "Zobrazit ceník"}
+                    {open ? cs.price.hide : cs.price.show}
                     <Icon name="arrow" size={17} className={open ? styles["arrow-open"] : undefined} />
                 </button>
 
                 <div id="price-details" className={styles.details} hidden={!open}>
-                    <h3 className={styles["detail-title"]}>Objednání</h3>
-                    <p>Na první sezení je potřeba se objednat — telefonicky, SMS či e-mailem. Ozvu se, jakmile to bude možné.</p>
+                    <h3 className={styles["detail-title"]}>{cs.price.orderTitle}</h3>
+                    <p>{cs.price.order}</p>
                     <p>
-                        V současné době kromě klasických sezení poskytuji konzultace i terapie online
-                        {CONTACT.skype && (
-                            <>
-                                {" "}
-                                přes Skype <a href={CONTACT.skype.href}>{CONTACT.skype.label}</a>
-                            </>
-                        )}
-                        .
+                        {skype
+                            ? rich(cs.price.onlineWithSkype, { skype: () => <a href={skype.href}>{skype.label}</a> })
+                            : cs.price.online}
                     </p>
 
-                    <h3 className={styles["detail-title"]}>Cena a platba</h3>
-                    <p>
-                        Jedno setkání trvá 55&nbsp;minut. Terapie není hrazena zdravotní pojišťovnou. Cena jednoho sezení je
-                        1&nbsp;000&nbsp;Kč. Platba je možná převodem na účet nebo v hotovosti.
-                    </p>
+                    <h3 className={styles["detail-title"]}>{cs.price.paymentTitle}</h3>
+                    <p>{cs.price.payment}</p>
 
-                    <h3 className={styles["detail-title"]}>Zrušení termínu</h3>
-                    <p>
-                        Pokud se v domluveném termínu nemůžete dostavit, je potřeba mě informovat nejpozději den předem, a to
-                        nejlépe telefonicky, případně SMS nebo e-mailem.
-                    </p>
+                    <h3 className={styles["detail-title"]}>{cs.price.cancelTitle}</h3>
+                    <p>{cs.price.cancel}</p>
                 </div>
             </div>
         </aside>

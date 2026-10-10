@@ -8,6 +8,7 @@ import { Terapie } from "components/Layout/Terapie/Terapie";
 import { What } from "components/Layout/What/What";
 import { Who } from "components/Layout/Who/Who";
 import { useReveal } from "hooks/useReveal";
+import cs from "locales/cs.json";
 import { Fragment } from "react";
 
 const App = () => {
@@ -16,7 +17,7 @@ const App = () => {
     return (
         <Fragment>
             <a href="#main" className="skip-link">
-                Přeskočit na obsah
+                {cs.app.skipLink}
             </a>
             <NavTop />
             <main id="main">
